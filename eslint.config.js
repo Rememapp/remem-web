@@ -1,25 +1,14 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import { FlatCompat } from '@eslint/eslintrc'
 
-export default defineConfig([
-    globalIgnores(['dist']),
+const compat = new FlatCompat({
+    baseDirectory: import.meta.dirname,
+})
+
+const eslintConfig = [
     {
-        files: ['**/*.{ts,tsx}'],
-        extends: [js.configs.recommended, tseslint.configs.recommended, reactHooks.configs.flat.recommended, reactRefresh.configs.vite],
-        languageOptions: {
-            globals: globals.browser,
-        },
+        ignores: ['node_modules/**', '.next/**', 'out/**', 'next-env.d.ts'],
     },
-    // shadcn/ui components intentionally export both components and constants (e.g. buttonVariants).
-    // Disable the Fast Refresh rule for that directory so components work out of the box.
-    {
-        files: ['src/components/ui/**/*.{ts,tsx}'],
-        rules: {
-            'react-refresh/only-export-components': 'off',
-        },
-    },
-])
+    ...compat.extends('next/core-web-vitals', 'next/typescript'),
+]
+
+export default eslintConfig

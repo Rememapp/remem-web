@@ -53,3 +53,11 @@ coverage/
 
 # Misc
 *.local
+
+# Next.js
+.next/
+.vercel/
+next-env.d.ts
+
+# Local waitlist store (dev only)
+.data/

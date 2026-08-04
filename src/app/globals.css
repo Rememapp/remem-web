@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-outfit), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+ * Remem brand surface — cool grey-blue neutrals, violet accent.
+ * Dark mode first; light mode fully supported. No gradients anywhere.
+ */
+:root {
+    --background: oklch(0.985 0.004 260);
+    --foreground: oklch(0.21 0.03 266);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.21 0.03 266);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.21 0.03 266);
+    --primary: oklch(0.5 0.24 294);
+    --primary-foreground: oklch(0.985 0.005 294);
+    --secondary: oklch(0.955 0.008 262);
+    --secondary-foreground: oklch(0.28 0.03 266);
+    --muted: oklch(0.955 0.008 262);
+    --muted-foreground: oklch(0.5 0.025 264);
+    --accent: oklch(0.945 0.025 294);
+    --accent-foreground: oklch(0.38 0.16 294);
+    --destructive: oklch(0.577 0.245 27.3);
+    --border: oklch(0.915 0.01 262);
+    --input: oklch(0.915 0.01 262);
+    --ring: oklch(0.5 0.24 294);
+    --radius: 0.75rem;
+}
+
+.dark {
+    --background: oklch(0.155 0.02 268);
+    --foreground: oklch(0.94 0.008 262);
+    --card: oklch(0.195 0.024 268);
+    --card-foreground: oklch(0.94 0.008 262);
+    --popover: oklch(0.195 0.024 268);
+    --popover-foreground: oklch(0.94 0.008 262);
+    --primary: oklch(0.67 0.19 294);
+    --primary-foreground: oklch(0.145 0.03 294);
+    --secondary: oklch(0.24 0.025 268);
+    --secondary-foreground: oklch(0.94 0.008 262);
+    --muted: oklch(0.24 0.025 268);
+    --muted-foreground: oklch(0.68 0.02 262);
+    --accent: oklch(0.28 0.06 294);
+    --accent-foreground: oklch(0.85 0.09 294);
+    --destructive: oklch(0.704 0.191 22.2);
+    --border: oklch(1 0 0 / 9%);
+    --input: oklch(1 0 0 / 13%);
+    --ring: oklch(0.67 0.19 294);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    html {
+        @apply scroll-smooth font-sans antialiased;
+    }
+    body {
+        @apply bg-background text-foreground;
+        text-rendering: optimizeLegibility;
+    }
+    ::selection {
+        @apply bg-primary/20;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@utility container-page {
+    @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+}
