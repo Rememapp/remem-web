@@ -35,6 +35,27 @@
     --animate-scan-laser: scan-laser 2.4s ease-in-out infinite;
     --animate-scan-spin-slow: scan-spin 14s linear infinite;
     --animate-scan-spin-reverse: scan-spin-reverse 10s linear infinite;
+    --animate-drift-a: drift-a 46s ease-in-out infinite alternate;
+    --animate-drift-b: drift-b 58s ease-in-out infinite alternate;
+}
+
+/* Ambient background glow drift — see background-fx.tsx. */
+@keyframes drift-a {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(11rem, 7rem) scale(1.15);
+    }
+}
+
+@keyframes drift-b {
+    from {
+        transform: translate(0, 0) scale(1.1);
+    }
+    to {
+        transform: translate(-9rem, -8rem) scale(0.95);
+    }
 }
 
 /* Scanner reticle animations for the interactive demo's extension-popup replica. */

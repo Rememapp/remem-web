@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Outfit } from 'next/font/google'
 import type { ReactNode } from 'react'
 
+import { BackgroundFx } from '@/components/background-fx'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
 import { ThemeProvider } from '@/components/layout/theme-provider'
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="en" suppressHydrationWarning>
             <body className={`${geist.variable} ${outfit.variable} font-sans`}>
                 <ThemeProvider>
+                    <BackgroundFx />
                     <a
                         href="#main"
                         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
