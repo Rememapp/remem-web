@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <>
-            <PageHeader eyebrow="About" title="The web should remember you — without owning you" />
+            <PageHeader title="The web should remember you — without owning you" />
             <section className="container-page pb-12">
                 <Reveal className="prose-remem mx-auto max-w-2xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
                     <p>

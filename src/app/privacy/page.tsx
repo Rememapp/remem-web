@@ -65,7 +65,7 @@ const sections = [
 export default function PrivacyPage() {
     return (
         <>
-            <PageHeader eyebrow="Legal" title="Privacy policy" description="Written to be read, not skimmed past. Last updated August 2026." />
+            <PageHeader title="Privacy policy" description="Written to be read, not skimmed past. Last updated August 2026." />
             <section className="container-page pb-24">
                 <Reveal className="mx-auto max-w-2xl space-y-10">
                     {sections.map((section) => (

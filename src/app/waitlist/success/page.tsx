@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { Reveal } from '@/components/motion/reveal'
+import { SquareDot } from '@/components/section-heading'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
@@ -16,12 +17,19 @@ export default function WaitlistSuccessPage() {
     return (
         <section className="container-page flex min-h-[70vh] flex-col items-center justify-center pt-32 pb-24 text-center">
             <Reveal immediate>
-                <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-emerald-500/10">
-                    <CheckCircle2 aria-hidden className="size-8 text-emerald-500" />
+                <div className="relative mx-auto flex size-16 items-center justify-center bg-primary/10">
+                    <span aria-hidden className="absolute top-0 left-0 size-3 border-t border-l border-primary/60" />
+                    <span aria-hidden className="absolute top-0 right-0 size-3 border-t border-r border-primary/60" />
+                    <span aria-hidden className="absolute bottom-0 left-0 size-3 border-b border-l border-primary/60" />
+                    <span aria-hidden className="absolute right-0 bottom-0 size-3 border-r border-b border-primary/60" />
+                    <CheckCircle2 aria-hidden className="size-8 text-primary" />
                 </div>
             </Reveal>
             <Reveal immediate delay={0.1}>
-                <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-balance md:text-5xl">You&apos;re in.</h1>
+                <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">
+                    You&apos;re in
+                    <SquareDot />
+                </h1>
             </Reveal>
             <Reveal immediate delay={0.18}>
                 <p className="mt-4 max-w-md text-lg leading-relaxed text-muted-foreground">

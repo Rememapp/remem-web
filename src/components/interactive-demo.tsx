@@ -205,7 +205,7 @@ export function InteractiveDemo() {
             <div
                 role="group"
                 aria-label="Interactive Remem demo"
-                className="relative overflow-hidden rounded-2xl border border-border bg-card text-left shadow-[0_24px_80px_rgba(0,0,0,0.25)] select-none"
+                className="relative overflow-hidden rounded-lg border border-border bg-card text-left shadow-[0_24px_80px_rgba(0,0,0,0.25)] select-none"
             >
                 {/* Window chrome — the extension icon lives here, like a real toolbar */}
                 <div className="flex items-center gap-3 border-b border-border px-4 py-3">
@@ -214,8 +214,8 @@ export function InteractiveDemo() {
                         <span className="size-3 rounded-full bg-amber-400/80" />
                         <span className="size-3 rounded-full bg-emerald-400/80" />
                     </div>
-                    <div aria-hidden className="mx-auto flex h-7 w-full max-w-sm items-center justify-center rounded-full bg-secondary text-xs text-muted-foreground">
-                        jobs.example.com/apply/senior-engineer
+                    <div aria-hidden className="mx-auto flex h-7 w-full max-w-sm min-w-0 items-center justify-center overflow-hidden rounded-md bg-secondary px-3 font-mono text-[11px] tracking-wide text-muted-foreground">
+                        <span className="truncate">jobs.example.com/apply/senior-engineer</span>
                     </div>
                     <button
                         ref={iconRef}
@@ -261,7 +261,7 @@ export function InteractiveDemo() {
                             const filled = (values[field.id] ?? '') === field.value
                             return (
                                 <div key={field.id} className="space-y-1.5">
-                                    <label htmlFor={`demo-${field.id}`} className="block text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                                    <label htmlFor={`demo-${field.id}`} className="block font-mono text-[10px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
                                         {field.label}
                                     </label>
                                     <div className="relative">
@@ -271,7 +271,7 @@ export function InteractiveDemo() {
                                             value={values[field.id] ?? ''}
                                             onChange={(event) => setValues((prev) => ({ ...prev, [field.id]: event.target.value }))}
                                             className={cn(
-                                                'w-full rounded-xl border bg-background px-3.5 py-2.5 pr-9 text-sm text-foreground transition-all duration-700 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30',
+                                                'w-full rounded-md border bg-background px-3.5 py-2.5 pr-9 text-sm text-foreground transition-all duration-700 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30',
                                                 // Mirrors the extension's highlight burst: solid outline + glow + tint that fades out.
                                                 bursting === field.id ? 'border-primary bg-primary/10 shadow-[0_0_0_5px_rgba(134,59,255,0.22)] duration-100' : 'border-input shadow-none',
                                             )}
@@ -284,7 +284,7 @@ export function InteractiveDemo() {
                                                     exit={{ opacity: 0 }}
                                                     className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2"
                                                 >
-                                                    <Check aria-hidden className="size-4 text-emerald-500" />
+                                                    <Check aria-hidden className="size-4 text-primary" />
                                                 </motion.span>
                                             ) : null}
                                         </AnimatePresence>
@@ -295,7 +295,7 @@ export function InteractiveDemo() {
 
                         {/* Open-ended question — receives an AI draft to review, never a silent fill. */}
                         <div className="space-y-1.5">
-                            <label htmlFor="demo-open-question" className="block text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                            <label htmlFor="demo-open-question" className="block font-mono text-[10px] font-medium tracking-[0.12em] text-muted-foreground uppercase">
                                 {OPEN_QUESTION}
                             </label>
                             <textarea
@@ -304,7 +304,7 @@ export function InteractiveDemo() {
                                 value={openAnswer}
                                 onChange={(event) => setOpenAnswer(event.target.value)}
                                 className={cn(
-                                    'w-full resize-none rounded-xl border bg-background px-3.5 py-2.5 text-sm text-foreground transition-all duration-700 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30',
+                                    'w-full resize-none rounded-md border bg-background px-3.5 py-2.5 text-sm text-foreground transition-all duration-700 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30',
                                     bursting === 'open' ? 'border-primary bg-primary/10 shadow-[0_0_0_5px_rgba(134,59,255,0.22)] duration-100' : 'border-input shadow-none',
                                 )}
                             />
@@ -339,7 +339,7 @@ export function InteractiveDemo() {
                             <button
                                 type="button"
                                 onClick={() => setPhase('submitted')}
-                                className="rounded-full bg-foreground px-5 py-2 text-xs font-semibold text-background transition-transform outline-none hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98]"
+                                className="rounded-md bg-foreground px-5 py-2 font-mono text-[11px] font-semibold tracking-[0.1em] text-background uppercase transition-transform outline-none hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98]"
                             >
                                 Submit application
                             </button>
@@ -618,17 +618,17 @@ export function InteractiveDemo() {
                                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                                 className="flex max-w-sm flex-col items-center gap-3 text-center"
                             >
-                                <span className="flex size-14 items-center justify-center rounded-full bg-emerald-500/10">
-                                    <CheckCircle2 aria-hidden className="size-7 text-emerald-500" />
+                                <span className="flex size-14 items-center justify-center rounded-full bg-primary/10">
+                                    <CheckCircle2 aria-hidden className="size-7 text-primary" />
                                 </span>
-                                <p className="font-display text-xl font-bold">Submitted — by you.</p>
+                                <p className="font-display text-xl font-bold tracking-tight uppercase">Submitted — by you.</p>
                                 <p className="text-sm leading-relaxed text-muted-foreground">
                                     Remem {filledCount > 0 ? `filled ${filledCount} fields and ` : ''}never touched the submit button. It never will.
                                 </p>
                                 <button
                                     type="button"
                                     onClick={reset}
-                                    className="mt-2 flex items-center gap-2 rounded-full border border-border px-5 py-2 text-sm font-medium transition-colors outline-none hover:bg-secondary/60 focus-visible:ring-2 focus-visible:ring-ring"
+                                    className="mt-2 flex items-center gap-2 rounded-md border border-border px-5 py-2 font-mono text-xs font-medium tracking-[0.1em] uppercase transition-colors outline-none hover:bg-secondary/60 focus-visible:ring-2 focus-visible:ring-ring"
                                 >
                                     <RotateCcw aria-hidden className="size-4" />
                                     Replay demo

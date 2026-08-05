@@ -5,8 +5,8 @@
 
 @theme inline {
     --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-    --font-display: var(--font-outfit), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-    --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+    --font-display: var(--font-chakra), var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
     --color-ring: var(--ring);
     --color-input: var(--input);
     --color-border: var(--border);
@@ -25,40 +25,24 @@
     --color-card: var(--card);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
+    --color-track-career: var(--track-career);
+    --color-track-answer: var(--track-answer);
+    --color-boundary: var(--boundary);
+    --color-steel: var(--steel);
+    --radius-sm: calc(var(--radius) * 0.5);
+    --radius-md: calc(var(--radius) * 0.75);
     --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+    --radius-xl: calc(var(--radius) * 1.5);
+    --radius-2xl: calc(var(--radius) * 2);
     --animate-scan-laser: scan-laser 2.4s ease-in-out infinite;
     --animate-scan-spin-slow: scan-spin 14s linear infinite;
     --animate-scan-spin-reverse: scan-spin-reverse 10s linear infinite;
-    --animate-drift-a: drift-a 46s ease-in-out infinite alternate;
-    --animate-drift-b: drift-b 58s ease-in-out infinite alternate;
+    --animate-ring-slow: scan-spin 240s linear infinite;
+    --animate-ring-slower: scan-spin-reverse 360s linear infinite;
 }
 
-/* Ambient background glow drift — see background-fx.tsx. */
-@keyframes drift-a {
-    from {
-        transform: translate(0, 0) scale(1);
-    }
-    to {
-        transform: translate(11rem, 7rem) scale(1.15);
-    }
-}
-
-@keyframes drift-b {
-    from {
-        transform: translate(0, 0) scale(1.1);
-    }
-    to {
-        transform: translate(-9rem, -8rem) scale(0.95);
-    }
-}
-
-/* Scanner reticle animations for the interactive demo's extension-popup replica. */
+/* Scanner reticle animations for the interactive demo's extension-popup replica,
+   reused at landscape scale by the detector-field background. */
 @keyframes scan-laser {
     0%,
     100% {
@@ -87,50 +71,62 @@
 }
 
 /*
- * Remem brand surface — cool grey-blue neutrals, violet accent.
- * Dark mode first; light mode fully supported. No gradients anywhere.
+ * Remem — "Held Event" surface.
+ * The collider event display as visual world: vacuum ground, detector-steel
+ * structure, facts as signal tracks. Violet = identity facts (brand primary),
+ * cyan = career facts, amber = AI-drafted answers, red = the hard boundary
+ * (the submit Remem never presses). Dark mode first; light mode is the
+ * printed event plot. No color gradients anywhere.
  */
 :root {
-    --background: oklch(0.985 0.004 260);
-    --foreground: oklch(0.21 0.03 266);
+    --background: oklch(0.977 0.004 240);
+    --foreground: oklch(0.24 0.03 255);
     --card: oklch(1 0 0);
-    --card-foreground: oklch(0.21 0.03 266);
+    --card-foreground: oklch(0.24 0.03 255);
     --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.21 0.03 266);
-    --primary: oklch(0.5 0.24 294);
-    --primary-foreground: oklch(0.985 0.005 294);
-    --secondary: oklch(0.955 0.008 262);
-    --secondary-foreground: oklch(0.28 0.03 266);
-    --muted: oklch(0.955 0.008 262);
-    --muted-foreground: oklch(0.5 0.025 264);
-    --accent: oklch(0.945 0.025 294);
-    --accent-foreground: oklch(0.38 0.16 294);
-    --destructive: oklch(0.577 0.245 27.3);
-    --border: oklch(0.915 0.01 262);
-    --input: oklch(0.915 0.01 262);
-    --ring: oklch(0.5 0.24 294);
-    --radius: 0.75rem;
+    --popover-foreground: oklch(0.24 0.03 255);
+    --primary: oklch(0.5 0.24 293);
+    --primary-foreground: oklch(0.985 0.005 293);
+    --secondary: oklch(0.945 0.008 245);
+    --secondary-foreground: oklch(0.3 0.03 255);
+    --muted: oklch(0.945 0.008 245);
+    --muted-foreground: oklch(0.48 0.03 252);
+    --accent: oklch(0.94 0.025 293);
+    --accent-foreground: oklch(0.38 0.16 293);
+    --destructive: oklch(0.55 0.22 27);
+    --border: oklch(0.88 0.015 248);
+    --input: oklch(0.88 0.015 248);
+    --ring: oklch(0.5 0.24 293);
+    --track-career: oklch(0.48 0.11 230);
+    --track-answer: oklch(0.5 0.12 80);
+    --boundary: oklch(0.53 0.21 27);
+    --steel: oklch(0.62 0.04 250);
+    --radius: 0.5rem;
 }
 
 .dark {
-    --background: oklch(0.155 0.02 268);
-    --foreground: oklch(0.94 0.008 262);
-    --card: oklch(0.195 0.024 268);
-    --card-foreground: oklch(0.94 0.008 262);
-    --popover: oklch(0.195 0.024 268);
-    --popover-foreground: oklch(0.94 0.008 262);
-    --primary: oklch(0.67 0.19 294);
-    --primary-foreground: oklch(0.145 0.03 294);
-    --secondary: oklch(0.24 0.025 268);
-    --secondary-foreground: oklch(0.94 0.008 262);
-    --muted: oklch(0.24 0.025 268);
-    --muted-foreground: oklch(0.68 0.02 262);
-    --accent: oklch(0.28 0.06 294);
-    --accent-foreground: oklch(0.85 0.09 294);
-    --destructive: oklch(0.704 0.191 22.2);
-    --border: oklch(1 0 0 / 9%);
-    --input: oklch(1 0 0 / 13%);
-    --ring: oklch(0.67 0.19 294);
+    --background: oklch(0.158 0.014 255);
+    --foreground: oklch(0.93 0.006 250);
+    --card: oklch(0.198 0.02 253);
+    --card-foreground: oklch(0.93 0.006 250);
+    --popover: oklch(0.198 0.02 253);
+    --popover-foreground: oklch(0.93 0.006 250);
+    --primary: oklch(0.67 0.19 293);
+    --primary-foreground: oklch(0.145 0.03 293);
+    --secondary: oklch(0.245 0.022 253);
+    --secondary-foreground: oklch(0.93 0.006 250);
+    --muted: oklch(0.245 0.022 253);
+    --muted-foreground: oklch(0.68 0.025 250);
+    --accent: oklch(0.28 0.06 293);
+    --accent-foreground: oklch(0.85 0.09 293);
+    --destructive: oklch(0.68 0.19 25);
+    --border: oklch(0.72 0.04 250 / 18%);
+    --input: oklch(0.72 0.04 250 / 26%);
+    --ring: oklch(0.67 0.19 293);
+    --track-career: oklch(0.75 0.12 225);
+    --track-answer: oklch(0.8 0.14 85);
+    --boundary: oklch(0.66 0.21 25);
+    --steel: oklch(0.52 0.05 250);
 }
 
 @layer base {
@@ -143,9 +139,34 @@
     body {
         @apply bg-background text-foreground;
         text-rendering: optimizeLegibility;
+        caret-color: var(--primary);
+        overflow-x: clip;
     }
     ::selection {
-        @apply bg-primary/20;
+        background: color-mix(in oklch, var(--primary) 25%, transparent);
+    }
+    /* The instrument owns its chrome: thin steel scrollbars, no default aura. */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: color-mix(in oklch, var(--steel) 45%, transparent);
+        border: 3px solid transparent;
+        background-clip: content-box;
+        border-radius: var(--radius-sm);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: color-mix(in oklch, var(--steel) 70%, transparent);
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+    a,
+    button {
+        @apply underline-offset-4;
     }
     @media (prefers-reduced-motion: reduce) {
         html {
@@ -163,4 +184,67 @@
 
 @utility container-page {
     @apply mx-auto w-full max-w-6xl px-6 md:px-8;
+}
+
+/*
+ * Entrance motion — CSS only, so content is never blank before hydration.
+ * `.enter` plays once on load (hero, page headers); `.scroll-reveal` rides a
+ * scroll timeline where supported and simply stays visible where not.
+ */
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes rise-in {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+    @keyframes rise-in-down {
+        from {
+            opacity: 0;
+            transform: translateY(-14px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .enter {
+        animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .enter-down {
+        animation-name: rise-in-down;
+    }
+    .enter-fade {
+        animation-name: fade-in;
+    }
+    @supports (animation-timeline: view()) {
+        .scroll-reveal {
+            animation: rise-in linear both;
+            animation-timeline: view();
+            animation-range: entry 10% entry 55%;
+        }
+    }
+}
+
+/* Mono readout label — the instrument's small-caps voice. */
+@utility readout {
+    @apply font-mono text-[11px] font-medium tracking-[0.18em] uppercase;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Data values line up like an instrument panel. */
+@utility tnum {
+    font-variant-numeric: tabular-nums;
 }

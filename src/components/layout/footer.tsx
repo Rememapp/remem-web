@@ -14,14 +14,6 @@ const columns = [
         ],
     },
     {
-        heading: 'Company',
-        links: [
-            { href: '/about', label: 'About' },
-            { href: '/contact', label: 'Contact' },
-            { href: siteConfig.links.roadmap, label: 'Roadmap' },
-        ],
-    },
-    {
         heading: 'Legal',
         links: [
             { href: '/privacy', label: 'Privacy policy' },
@@ -31,9 +23,8 @@ const columns = [
     {
         heading: 'Connect',
         links: [
-            { href: siteConfig.links.twitter, label: 'Twitter / X', external: true },
-            { href: siteConfig.links.github, label: 'GitHub', external: true },
-            { href: `mailto:${siteConfig.email}`, label: siteConfig.email, external: true },
+            { href: '/about', label: 'About' },
+            { href: '/contact', label: 'Contact' },
         ],
     },
 ] as const
@@ -47,11 +38,11 @@ export function Footer() {
                         <Logo />
                         <p className="text-sm leading-relaxed text-muted-foreground">{siteConfig.tagline} A private memory for your browser — local-first, reviewed by you, owned by you.</p>
                     </div>
-                    <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-10 sm:flex sm:gap-16">
                         {columns.map((column) => (
                             <div key={column.heading}>
-                                <h3 className="text-sm font-semibold">{column.heading}</h3>
-                                <ul className="mt-3 space-y-2.5">
+                                <h3 className="readout text-muted-foreground">{column.heading}</h3>
+                                <ul className="mt-4 space-y-2.5">
                                     {column.links.map((link) => (
                                         <li key={link.label}>
                                             <Link
@@ -68,9 +59,12 @@ export function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-                    <p>© {new Date().getFullYear()} Remem. All rights reserved.</p>
-                    <p>Your data stays yours. That&apos;s the whole point.</p>
+                <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 font-mono text-xs tracking-wide text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+                    <p className="tnum">© {new Date().getFullYear()} Remem. All rights reserved.</p>
+                    <p className="flex items-center gap-2">
+                        <span aria-hidden className="inline-block size-1.5 bg-primary" />
+                        Your data stays yours. That&apos;s the whole point.
+                    </p>
                 </div>
             </div>
         </footer>

@@ -47,7 +47,7 @@ const sections = [
 export default function TermsPage() {
     return (
         <>
-            <PageHeader eyebrow="Legal" title="Terms of service" description="Short, honest, and current as of August 2026." />
+            <PageHeader title="Terms of service" description="Short, honest, and current as of August 2026." />
             <section className="container-page pb-24">
                 <Reveal className="mx-auto max-w-2xl space-y-10">
                     {sections.map((section) => (

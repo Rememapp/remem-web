@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Outfit } from 'next/font/google'
+import { Chakra_Petch, Geist, Geist_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import { BackgroundFx } from '@/components/background-fx'
@@ -12,7 +12,8 @@ import { siteConfig } from '@/lib/site'
 import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' })
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' })
+const chakra = Chakra_Petch({ weight: ['500', '600', '700'], subsets: ['latin'], variable: '--font-chakra', display: 'swap' })
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
@@ -53,8 +54,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
     themeColor: [
-        { media: '(prefers-color-scheme: dark)', color: '#0b0f19' },
-        { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
+        { media: '(prefers-color-scheme: dark)', color: '#0b0e14' },
+        { media: '(prefers-color-scheme: light)', color: '#f7f8fa' },
     ],
     width: 'device-width',
     initialScale: 1,
@@ -80,15 +81,35 @@ const softwareJsonLd = {
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 }
 
+const directionContract = `impeccable direction contract — seed f17b9659 (challenger: collider event display)
+THESIS: The page scan is one held collision event: facts curve out of your memory as
+classified signal tracks, reviewed while frozen. Refuses the dark-SaaS glow page with
+particle background and bento icon-cards.
+OWN-WORLD: Vacuum-black ground, detector-steel rings and hairlines, tracks colored by
+fact type — violet identity, cyan career, amber AI answers, red reserved for the one
+hard boundary (the submit Remem never presses). Chakra Petch caps for display, Geist
+body, Geist Mono readouts with tabular figures. Machined 8px corners, no gradients.
+STORY: A job seeker sees their own repetition held still, understands facts fill
+deterministically from their device, AI only drafts, and they always press submit —
+then joins the waitlist.
+FIRST VIEWPORT: Left: display-caps headline with violet square full stop, two-line
+subcopy, waitlist input + button, mono status readout. Right/below: the live browser
+demo as the event source, tracks blooming from it to pinned fact labels.
+FORM: Collider event display — user-chosen catalog challenger over grounded #4
+(terminal/diff), round 2 after one full re-roll.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
+review, the verdict, and DESIGN.md`
+
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${geist.variable} ${outfit.variable} font-sans`}>
+            <body className={`${geist.variable} ${geistMono.variable} ${chakra.variable} font-sans`}>
+                <div hidden aria-hidden data-impeccable-contract dangerouslySetInnerHTML={{ __html: `<!--\n${directionContract}\n-->` }} />
                 <ThemeProvider>
                     <BackgroundFx />
                     <a
                         href="#main"
-                        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
+                        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-100 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-primary-foreground"
                     >
                         Skip to content
                     </a>

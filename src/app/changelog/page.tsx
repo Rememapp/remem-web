@@ -18,16 +18,16 @@ export default function ChangelogPage() {
 
     return (
         <>
-            <PageHeader eyebrow="Changelog" title="Building in the open" description="Progress notes on the road to launch. New entries land here first." />
+            <PageHeader title="Building in the open" description="Progress notes on the road to launch. New entries land here first." />
             <section className="container-page pb-24">
                 <div className="mx-auto max-w-2xl space-y-12">
                     {entries.map((entry) => (
                         <Reveal key={entry.version}>
                             <article className="relative border-l border-border pl-8">
-                                <span aria-hidden className="absolute top-1.5 -left-[5px] size-2.5 rounded-full bg-primary" />
+                                <span aria-hidden className="absolute top-1.5 -left-[5px] size-2.5 bg-primary" />
                                 <div className="flex flex-wrap items-center gap-3">
                                     <Badge>{entry.version}</Badge>
-                                    <time dateTime={entry.date} className="text-sm text-muted-foreground">
+                                    <time dateTime={entry.date} className="font-mono text-xs tracking-wide text-muted-foreground tnum">
                                         {formatDate(entry.date)}
                                     </time>
                                 </div>

@@ -7,10 +7,11 @@ import { useState, useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { joinWaitlist } from '@/actions/waitlist'
 import { Button } from '@/components/ui/button'
+import { useTurnstile } from '@/components/turnstile'
 import { Input } from '@/components/ui/input'
 import { trackEvent } from '@/lib/analytics'
+import { joinWaitlist } from '@/lib/remem-api'
 import { cn } from '@/lib/utils'
 
 const waitlistSchema = z.object({
@@ -32,6 +33,7 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
     const router = useRouter()
     const [pending, startTransition] = useTransition()
     const [serverMessage, setServerMessage] = useState<{ tone: 'error' | 'info'; text: string } | null>(null)
+    const turnstile = useTurnstile()
 
     const {
         register,
@@ -42,10 +44,8 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
     const onSubmit = handleSubmit((values) => {
         setServerMessage(null)
         startTransition(async () => {
-            const formData = new FormData()
-            formData.set('email', values.email)
-            formData.set('company', values.company ?? '')
-            const result = await joinWaitlist(null, formData)
+            const turnstileToken = await turnstile.getToken()
+            const result = await joinWaitlist({ email: values.email.trim().toLowerCase(), source, company: values.company, turnstileToken })
 
             if (result.status === 'success') {
                 trackEvent('waitlist_joined', { source })
@@ -53,8 +53,11 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
             } else if (result.status === 'duplicate') {
                 trackEvent('waitlist_duplicate', { source })
                 setServerMessage({ tone: 'info', text: result.message })
+                turnstile.reset()
             } else {
                 setServerMessage({ tone: 'error', text: result.message })
+                // Tokens are single-use — a failed submit needs a fresh one before retrying.
+                turnstile.reset()
             }
         })
     })
@@ -76,7 +79,7 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
                         placeholder="you@example.com"
                         aria-invalid={errorText ? true : undefined}
                         aria-describedby={`waitlist-status-${source}`}
-                        className={cn(large && 'h-12 rounded-full px-5 text-base')}
+                        className={cn(large && 'h-12 px-5 text-base')}
                         {...register('email')}
                     />
                 </div>
@@ -88,6 +91,7 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
                     {!pending && <ArrowRight aria-hidden className="size-4" />}
                 </Button>
             </div>
+            {turnstile.widget}
             <p id={`waitlist-status-${source}`} role="status" aria-live="polite" className={cn('mt-2 min-h-5 text-sm', serverMessage?.tone === 'info' ? 'text-primary' : 'text-destructive')}>
                 {serverMessage?.tone === 'info' ? (
                     <span className="inline-flex items-center gap-1.5">

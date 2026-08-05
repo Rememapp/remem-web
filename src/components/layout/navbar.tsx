@@ -36,7 +36,7 @@ export function Navbar() {
         <header
             className={cn(
                 'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-                scrolled || open ? 'border-b border-border bg-background/80 backdrop-blur-xl' : 'border-b border-transparent bg-transparent',
+                scrolled || open ? 'border-b border-border bg-background/85 backdrop-blur-xl' : 'border-b border-transparent bg-transparent',
             )}
         >
             <nav aria-label="Main" className="container-page flex h-16 items-center justify-between">
@@ -51,10 +51,17 @@ export function Navbar() {
                                 href={link.href}
                                 aria-current={active ? 'page' : undefined}
                                 className={cn(
-                                    'rounded-full px-3.5 py-2 text-sm font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                                    active ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:bg-secondary/60 hover:text-foreground',
+                                    'group relative rounded-md px-3.5 py-2 font-mono text-xs font-medium tracking-[0.12em] uppercase transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                                    active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
                                 )}
                             >
+                                <span
+                                    aria-hidden
+                                    className={cn(
+                                        'mr-1.5 inline-block size-1.5 align-[0.05em] transition-colors',
+                                        active ? 'bg-primary' : 'bg-transparent group-hover:bg-steel',
+                                    )}
+                                />
                                 {link.label}
                             </Link>
                         )
@@ -87,7 +94,7 @@ export function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/60 hover:text-foreground"
+                                className="rounded-md px-3 py-2.5 font-mono text-xs font-medium tracking-[0.12em] text-muted-foreground uppercase transition-colors hover:bg-secondary/60 hover:text-foreground"
                             >
                                 {link.label}
                             </Link>

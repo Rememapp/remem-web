@@ -26,7 +26,7 @@ const faqJsonLd = {
 export default function FaqPage() {
     return (
         <>
-            <PageHeader eyebrow="FAQ" title="Everything people ask us" description="If yours isn't here, ask — we answer every message." />
+            <PageHeader title="Everything people ask us" description="If yours isn't here, ask — we answer every message." />
             <section className="container-page pb-12">
                 <Reveal className="mx-auto max-w-2xl">
                     <FaqList items={faqs} />

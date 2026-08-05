@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <>
-            <PageHeader eyebrow="Contact" title="Talk to us" description={`We read every message. Prefer email? Write to ${siteConfig.email}.`} />
+            <PageHeader title="Talk to us" description={`We read every message. Prefer email? Write to ${siteConfig.email}.`} />
             <section className="container-page pb-24">
                 <Reveal className="mx-auto max-w-xl">
                     <ContactForm />

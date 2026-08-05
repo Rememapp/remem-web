@@ -1,36 +1,54 @@
-import { ArrowDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { EventBloom } from '@/components/event-bloom'
 import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
-import { Badge } from '@/components/ui/badge'
+import { SquareDot } from '@/components/section-heading'
 import { Button } from '@/components/ui/button'
 import { WaitlistForm } from '@/components/waitlist-form'
 
 export function Hero() {
     return (
-        <section className="container-page flex flex-col items-center pt-36 pb-20 text-center md:pt-44">
-            <Reveal immediate from="down">
-                <Badge variant="accent">Privacy-first browser memory · Launching soon</Badge>
-            </Reveal>
-            <Reveal immediate delay={0.08}>
-                <h1 className="mt-6 max-w-3xl font-display text-5xl font-bold tracking-tight text-balance md:text-7xl">Never repeat yourself.</h1>
-            </Reveal>
-            <Reveal immediate delay={0.16}>
-                <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty md:text-xl">
-                    Fill in your information once. Remem remembers it — privately, on your device — and helps you reuse it on every form the web throws at you.
+        <section className="container-page pt-32 pb-20 md:pt-40">
+            <div className="grid items-center gap-12 lg:grid-cols-12">
+                <div className="lg:col-span-5">
+                    <Reveal immediate from="down">
+                        <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">
+                            Never repeat yourself
+                            <SquareDot />
+                        </h1>
+                    </Reveal>
+                    <Reveal immediate delay={0.1}>
+                        <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
+                            Save your details once. Remem fills every job application from memory on your device — you review every value, and you press submit.
+                        </p>
+                    </Reveal>
+                    <Reveal immediate delay={0.2} className="mt-8 flex flex-col gap-4">
+                        <WaitlistForm source="hero" />
+                        <Button asChild variant="ghost" className="w-fit -translate-x-3 text-muted-foreground">
+                            <Link href="/how-it-works">
+                                See how it works
+                                <ArrowRight aria-hidden className="size-4" />
+                            </Link>
+                        </Button>
+                    </Reveal>
+                </div>
+                <Reveal immediate delay={0.15} from="none" className="lg:col-span-7">
+                    <EventBloom />
+                </Reveal>
+            </div>
+
+            {/* The bloom's diving track lands here: the event's source, live */}
+            <div aria-hidden className="mx-auto -mt-2 hidden w-fit flex-col items-center md:flex lg:ml-[52%]">
+                <span className="h-10 border-l-2 border-dashed border-primary/50" />
+                <p className="mt-2 flex items-center gap-1.5 font-mono text-[10px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+                    <span className="size-1.5 bg-primary" />
+                    event.source — run the scan yourself
                 </p>
-            </Reveal>
-            <Reveal immediate delay={0.24} className="mt-8 flex w-full flex-col items-center gap-4">
-                <WaitlistForm source="hero" className="mx-auto" />
-                <Button asChild variant="ghost" className="text-muted-foreground">
-                    <Link href="/how-it-works">
-                        See how it works
-                        <ArrowDown aria-hidden className="size-4" />
-                    </Link>
-                </Button>
-            </Reveal>
-            <Reveal immediate delay={0.35} className="mt-14 w-full">
+            </div>
+
+            <Reveal immediate delay={0.4} className="mt-6 md:mt-4">
                 <InteractiveDemo />
             </Reveal>
         </section>
