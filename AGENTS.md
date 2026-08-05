@@ -11,7 +11,7 @@ which this site draws tokens from but does not copy wholesale).
 - Tailwind CSS v4 (CSS-first config in `src/app/globals.css`), shadcn-style UI primitives in `src/components/ui`
 - Motion (Framer Motion successor, `motion/react`) — client-only wrappers in `src/components/motion/reveal.tsx`
 - React Hook Form + Zod for forms; Server Actions in `src/actions/`
-- MDX blog via `next-mdx-remote-client` + `gray-matter`; content lives in `content/blog` and `content/changelog`
+- Markdown changelog via `next-mdx-remote-client` + `gray-matter`; content lives in `content/changelog`
 - Package manager: **bun** (`bun run dev|build|lint|typecheck|format`)
 
 ## Conversion goal
@@ -33,7 +33,15 @@ Resend Audiences when `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` are set, else a lo
 - Copy register: Linear/Arc — short, confident sentences; no "supercharge/unlock/revolutionize".
 - Product truths that copy must never contradict: never auto-submits; AI only writes open-ended
   answers (deterministic fields use deterministic logic); local-first; export/delete anytime;
-  cloud backup optional and E2E-encrypted.
+  backup is optional, off by default, encrypted on-device, and goes to the **user's own Google
+  Drive** (never Remem servers). Local data is NOT encrypted at rest — never claim "encrypted
+  storage" or "encrypted at rest".
+- **Positioning scope**: the extension currently targets job applications only (ATS platforms —
+  Greenhouse, Lever, Workday, Ashby). Copy must not claim support for government/university/
+  insurance/healthcare/checkout forms — those are roadmap, not product. The homepage is kept
+  deliberately lean: Hero (interactive demo) → proof strip → bento features → privacy → AI →
+  browsers → CTA; how-it-works and FAQ live only on their own pages. There is no blog (removed
+  2026-08; git history has the MDX setup if it ever comes back).
 
 ## SEO
 
@@ -45,10 +53,10 @@ domain is decided; social links there are placeholders too).
 
 ## Structure
 
-- `src/app/` — routes: `/`, `/features`, `/how-it-works`, `/faq`, `/about`, `/contact`, `/blog(/[slug])`,
+- `src/app/` — routes: `/`, `/features`, `/how-it-works`, `/faq`, `/about`, `/contact`,
   `/changelog`, `/privacy`, `/terms`, `/waitlist/success`
-- `src/components/sections/` — homepage sections; `src/components/` — shared (Timeline, BrowserMockup,
-  WaitlistForm, FaqList, FeatureCard, BlogCard, PageHeader, SectionHeading)
+- `src/components/sections/` — homepage sections; `src/components/` — shared (InteractiveDemo,
+  Timeline, WaitlistForm, FaqList, FeatureCard, PageHeader, SectionHeading)
 - `src/lib/` — site config, feature/FAQ data, blog/changelog loaders, analytics stub (Plausible/Umami-agnostic)
 
 Future-ready: pricing, docs, dashboard, roadmap/feature voting can be added as new routes without

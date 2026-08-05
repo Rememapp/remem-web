@@ -1,4 +1,4 @@
-import { Ban, CloudOff, Download, HardDrive, Hand, KeyRound, UserCheck } from 'lucide-react'
+import { Ban, CloudUpload, Download, HardDrive, Hand, UserCheck } from 'lucide-react'
 import Link from 'next/link'
 
 import { Reveal } from '@/components/motion/reveal'
@@ -7,8 +7,7 @@ import { Button } from '@/components/ui/button'
 
 const guarantees = [
     { icon: HardDrive, title: 'Everything local', detail: 'Your memory lives on your device, not on our servers.' },
-    { icon: KeyRound, title: 'Encrypted at rest', detail: 'Stored data is encrypted on your machine.' },
-    { icon: CloudOff, title: 'Cloud backup is optional', detail: 'Off by default. End-to-end encrypted if you turn it on.' },
+    { icon: CloudUpload, title: 'Backup to your own Drive', detail: 'Off by default. Encrypted before it uploads to your Google Drive — never to us.' },
     { icon: Ban, title: 'No selling your data', detail: 'We could not sell what we do not have.' },
     { icon: UserCheck, title: 'No silent uploads', detail: 'Forms and pages are never uploaded automatically.' },
     { icon: Hand, title: 'Never auto-submits', detail: 'A hard rule in the code, not a toggle in the settings.' },
@@ -37,7 +36,7 @@ export function Privacy() {
                                 </div>
                             </li>
                         ))}
-                        <li className="flex items-center justify-between gap-4 border-border bg-secondary/40 p-6 sm:col-span-2 lg:col-span-2">
+                        <li className="flex items-center justify-between gap-4 border-border bg-secondary/40 p-6 sm:col-span-2 lg:col-span-3">
                             <p className="text-sm leading-relaxed text-muted-foreground">The extension is open source — every one of these claims is verifiable in the code.</p>
                             <Button asChild variant="outline" size="sm">
                                 <Link href="/privacy">Read the privacy policy</Link>

@@ -5,7 +5,7 @@ import { Reveal } from '@/components/motion/reveal'
 
 export const metadata: Metadata = {
     title: 'Privacy policy',
-    description: 'The Remem privacy policy in plain language: your data lives on your device, cloud backup is optional and encrypted, and we have nothing to sell.',
+    description: 'The Remem privacy policy in plain language: your data lives on your device, backup goes encrypted to your own Google Drive, and we have nothing to sell.',
     alternates: { canonical: '/privacy' },
 }
 
@@ -13,13 +13,13 @@ const sections = [
     {
         heading: 'The short version',
         body: [
-            'Your memory data — profiles, answers, documents — is stored on your device, encrypted. We do not have it, so we cannot read it, lose it, or sell it. The only personal data this website collects is your email address, if you join the waitlist.',
+            'Your memory data — profiles, answers, documents — is stored on your device. We do not have it, so we cannot read it, lose it, or sell it. The only personal data this website collects is your email address, if you join the waitlist.',
         ],
     },
     {
         heading: 'Local storage',
         body: [
-            'Everything you teach Remem is stored in your browser on your machine, encrypted at rest. Form matching and filling happen locally. Uninstalling the extension or using its delete action removes this data permanently — there is no server copy.',
+            'Everything you teach Remem is stored in your browser on your machine. Form matching and filling happen locally. Uninstalling the extension or using its delete action removes this data permanently — there is no server copy.',
         ],
     },
     {
@@ -29,9 +29,9 @@ const sections = [
         ],
     },
     {
-        heading: 'Optional cloud backup',
+        heading: 'Optional Google Drive backup',
         body: [
-            'Cloud backup is off by default. If you enable it, your data is encrypted on your device before upload, with keys only you hold. We store an encrypted blob we cannot decrypt. Disabling backup deletes it.',
+            'Backup is off by default. If you enable it, your data is encrypted on your device and then uploaded to your own Google Drive — not to our servers. The backup file lives in your Drive, under your account and your control; we never hold a copy. Delete it there, or disable backup, and it is gone.',
         ],
     },
     {

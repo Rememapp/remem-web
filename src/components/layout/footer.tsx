@@ -17,7 +17,6 @@ const columns = [
         heading: 'Company',
         links: [
             { href: '/about', label: 'About' },
-            { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },
             { href: siteConfig.links.roadmap, label: 'Roadmap' },
         ],

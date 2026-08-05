@@ -22,7 +22,7 @@ export const faqs: Faq[] = [
     },
     {
         question: 'Where is my data stored?',
-        answer: 'On your device, encrypted. Remem is local-first: your memory lives in your browser’s storage on your machine. Nothing is uploaded unless you explicitly enable encrypted cloud backup.',
+        answer: 'On your device. Remem is local-first: your memory lives in your browser’s storage on your machine. Nothing is uploaded unless you explicitly enable backup — and backups go, encrypted, to your own Google Drive, not to our servers.',
     },
     {
         question: 'Will it auto-submit forms?',
@@ -38,11 +38,11 @@ export const faqs: Faq[] = [
     },
     {
         question: 'Can I delete everything?',
-        answer: 'Yes, in one action. Because your data lives on your device, deleting it actually deletes it — there is no server copy to chase down. If you enabled cloud backup, that encrypted copy is deleted too.',
+        answer: 'Yes, in one action. Because your data lives on your device, deleting it actually deletes it — there is no server copy to chase down. If you enabled backup, the encrypted backup file sits in your own Google Drive, fully under your control, and can be removed along with it.',
     },
     {
         question: 'Is cloud sync required?',
-        answer: 'No. Remem is fully functional without any account or cloud connection. Encrypted cloud backup is optional, off by default, and end-to-end encrypted so we cannot read what you back up.',
+        answer: 'No. Remem is fully functional without any account or cloud connection. Backup is optional and off by default — when you turn it on, your data is encrypted on your device and uploaded to your own Google Drive. It never touches our servers, so there is nothing for us to read.',
     },
     {
         question: 'Does it work offline?',
@@ -54,7 +54,7 @@ export const faqs: Faq[] = [
     },
     {
         question: 'What forms does it work on?',
-        answer: 'Any standard web form. It is built to shine on the long, repetitive ones: ATS platforms like Greenhouse, Lever, Workday, and Ashby, government and visa forms, university applications, insurance, healthcare intake, and SaaS onboarding.',
+        answer: 'Job applications — that is the focus right now. Remem is built to shine on ATS platforms like Greenhouse, Lever, Workday, and Ashby, and on career-site forms in general. Support for other repetitive forms (government, university, insurance, onboarding) is on the roadmap.',
     },
     {
         question: 'Which browsers are supported?',

@@ -34,9 +34,8 @@ Copy `.env.example` to `.env.local`. Everything is optional in development:
 
 ## Content
 
-- Blog posts: `content/blog/*.mdx` (frontmatter: `title`, `description`, `date`, `author`, `tags`)
 - Changelog entries: `content/changelog/*.md` (frontmatter: `version`, `title`, `date`)
 
-New files appear automatically in `/blog`, `/changelog`, the sitemap, and `/rss.xml`.
+New files appear automatically in `/changelog`.
 
 See [AGENTS.md](AGENTS.md) for architecture and design decisions.

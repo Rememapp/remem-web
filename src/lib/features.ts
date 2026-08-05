@@ -1,4 +1,4 @@
-import { Brain, Cloud, FileSearch, Lock, MousePointerClick, PenLine, ScanSearch, Search, UserRound, Eye, type LucideIcon } from 'lucide-react'
+import { Brain, Cloud, Download, FileSearch, MousePointerClick, PenLine, ScanSearch, Search, UserRound, Eye, type LucideIcon } from 'lucide-react'
 
 export interface Feature {
     icon: LucideIcon
@@ -35,14 +35,14 @@ export const features: Feature[] = [
     },
     {
         icon: Cloud,
-        title: 'Optional cloud backup',
-        description: 'Off by default. Turn it on and your data is encrypted before it leaves your device — we can never read it.',
+        title: 'Google Drive backup',
+        description: 'Off by default. Encrypted on your device, then uploaded to your own Google Drive — never to our servers.',
         tint: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400',
     },
     {
-        icon: Lock,
-        title: 'Encrypted storage',
-        description: 'Everything at rest is encrypted on your device. Your passport number is not a plaintext string in a database.',
+        icon: Download,
+        title: 'Export anytime',
+        description: 'Your memory is yours — export all of it in a readable format, or delete everything in one action.',
         tint: 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
     },
     {

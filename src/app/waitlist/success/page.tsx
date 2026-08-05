@@ -33,7 +33,7 @@ export default function WaitlistSuccessPage() {
                     <Link href="/how-it-works">See how Remem works</Link>
                 </Button>
                 <Button asChild variant="outline">
-                    <Link href="/blog">Read the blog</Link>
+                    <Link href="/faq">Read the FAQ</Link>
                 </Button>
             </Reveal>
         </section>

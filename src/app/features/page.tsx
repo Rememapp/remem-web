@@ -8,7 +8,7 @@ import { features } from '@/lib/features'
 
 export const metadata: Metadata = {
     title: 'Features',
-    description: 'Smart form detection, profile memory, AI writing for open-ended questions, encrypted local storage, and one-click fill — every Remem feature, explained.',
+    description: 'Smart form detection, profile memory, AI writing for open-ended questions, local-first storage, and one-click fill — every Remem feature, explained.',
     alternates: { canonical: '/features' },
 }
 

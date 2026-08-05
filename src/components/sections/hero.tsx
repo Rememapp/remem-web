@@ -1,7 +1,7 @@
 import { ArrowDown } from 'lucide-react'
 import Link from 'next/link'
 
-import { BrowserMockup } from '@/components/browser-mockup'
+import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -31,7 +31,7 @@ export function Hero() {
                 </Button>
             </Reveal>
             <Reveal immediate delay={0.35} className="mt-14 w-full">
-                <BrowserMockup />
+                <InteractiveDemo />
             </Reveal>
         </section>
     )

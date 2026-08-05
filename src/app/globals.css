@@ -32,6 +32,37 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+    --animate-scan-laser: scan-laser 2.4s ease-in-out infinite;
+    --animate-scan-spin-slow: scan-spin 14s linear infinite;
+    --animate-scan-spin-reverse: scan-spin-reverse 10s linear infinite;
+}
+
+/* Scanner reticle animations for the interactive demo's extension-popup replica. */
+@keyframes scan-laser {
+    0%,
+    100% {
+        top: 12%;
+        opacity: 0;
+    }
+    15%,
+    85% {
+        opacity: 1;
+    }
+    50% {
+        top: 84%;
+    }
+}
+
+@keyframes scan-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scan-spin-reverse {
+    to {
+        transform: rotate(-360deg);
+    }
 }
 
 /*
