@@ -17,7 +17,9 @@ export function FinalCta() {
                         Type it once. Then never again
                         <SquareDot />
                     </h2>
-                    <p className="mt-4 max-w-md text-lg text-muted-foreground text-pretty">Join the waitlist for early access and launch pricing. No spam — just the launch email.</p>
+                    <p className="mt-4 max-w-md text-lg text-muted-foreground text-pretty">
+                        Join the waitlist to be the first to try Remem. <br /> No spam — just the launch email.
+                    </p>
                     <div className="mt-8 flex w-full justify-center">
                         <WaitlistForm source="final-cta" />
                     </div>

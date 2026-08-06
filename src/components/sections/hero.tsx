@@ -21,7 +21,7 @@ export function Hero() {
                     </Reveal>
                     <Reveal immediate delay={0.1}>
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
-                            Save your details once. Remem fills every job application from memory on your device — you review every value, and you press submit.
+                            Teach Remem about yourself once. It fills applications from your memory on your device. You review everything, then submit with confidence.
                         </p>
                     </Reveal>
                     <Reveal immediate delay={0.2} className="mt-8 flex flex-col gap-4">

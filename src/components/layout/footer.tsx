@@ -36,7 +36,9 @@ export function Footer() {
                 <div className="flex flex-col gap-12 md:flex-row md:justify-between">
                     <div className="max-w-xs space-y-3">
                         <Logo />
-                        <p className="text-sm leading-relaxed text-muted-foreground">{siteConfig.tagline} A private memory for your browser — local-first, reviewed by you, owned by you.</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {siteConfig.tagline} <br /> Your browser should remember you.
+                        </p>
                     </div>
                     <div className="grid grid-cols-2 gap-10 sm:flex sm:gap-16">
                         {columns.map((column) => (
