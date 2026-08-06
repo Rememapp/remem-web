@@ -3,6 +3,7 @@ import { Chakra_Petch, Geist, Geist_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import { BackgroundFx } from '@/components/background-fx'
+import { BackToTop } from '@/components/layout/back-to-top'
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
 import { ThemeProvider } from '@/components/layout/theme-provider'
@@ -124,6 +125,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <Navbar />
                     <main id="main">{children}</main>
                     <Footer />
+                    <BackToTop />
                 </ThemeProvider>
                 <Analytics />
                 <JsonLd data={organizationJsonLd} />
