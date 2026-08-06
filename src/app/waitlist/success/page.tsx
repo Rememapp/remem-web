@@ -34,12 +34,12 @@ export default function WaitlistSuccessPage() {
             </Reveal>
             <Reveal immediate delay={0.18}>
                 <p className="mt-4 max-w-md text-lg leading-relaxed text-muted-foreground">
-                    Welcome to the waitlist. We&apos;ll email you exactly twice: once when early access opens for you, and once at launch. That&apos;s it.
+                    Welcome to the waitlist. <br /> We&apos;ll only email you when there&apos;s something worth sharing — like beta access or launch.
                 </p>
             </Reveal>
             <Reveal immediate delay={0.26} className="mt-8 flex flex-wrap justify-center gap-3">
                 <Button asChild>
-                    <Link href="/how-it-works">See how Remem works</Link>
+                    <Link href="/how-it-works">See how It works</Link>
                 </Button>
                 <Button asChild variant="outline">
                     <Link href="/faq">Read the FAQ</Link>
