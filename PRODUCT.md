@@ -56,7 +56,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - The extension currently targets job applications only (ATS platforms). Government, university, insurance, healthcare, checkout forms are roadmap — copy must not claim support for them.
 
 **Open decisions (do not invent):**
-- Final domain (placeholder: remem.app).
+- Final domain (temporary: remem.itssvk.dev, a subdomain of the personal site — a proper domain hasn't been bought yet).
 - Social links (X, GitHub) are placeholders.
 - Launch pricing: core local memory + form fill will be free; AI writing paid plan is the direction but TBD — copy should not commit to specific tiers or prices yet.
 
@@ -66,7 +66,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - **Tagline:** "Never repeat yourself."
 - **Voice:** Short, confident sentences; no hedging, no superlatives ("supercharge", "revolutionize", "unlock"). Linear/Arc register — direct and factual.
 - **Visual identity:** Dark mode first, violet/indigo accent, Outfit (display) + Geist (body), no gradients.
-- **Contact:** hello@remem.app
+- **Contact:** hello@remem.itssvk.dev
 - **Open source extension:** a confirmed, verifiable brand commitment — privacy claims are in the code.
 
 ## Evidence on Hand

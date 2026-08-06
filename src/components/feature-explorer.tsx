@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { features, type FeatureChannel } from '@/lib/features'
 import { cn } from '@/lib/utils'
@@ -21,6 +21,24 @@ export function FeatureExplorer() {
     const [paused, setPaused] = useState(false)
     const reducedMotion = useReducedMotion()
 
+    // Pin the whole section to the tallest height it has ever rendered, so the list expanding
+    // or collapsing as the active item changes can't shrink the section and nudge the waitlist
+    // form further down the page. Only ever grows, never shrinks, and settles after first paint.
+    const sectionRef = useRef<HTMLDivElement>(null)
+    const [sectionMinHeight, setSectionMinHeight] = useState<number>()
+
+    useLayoutEffect(() => {
+        const el = sectionRef.current
+        if (!el) return
+        const observer = new ResizeObserver((entries) => {
+            const height = entries[0]?.contentRect.height
+            if (!height) return
+            setSectionMinHeight((prev) => (prev === undefined ? height : Math.max(prev, height)))
+        })
+        observer.observe(el)
+        return () => observer.disconnect()
+    }, [])
+
     // Auto-advance until the visitor interacts; skipped entirely under reduced motion.
     useEffect(() => {
         if (paused || reducedMotion) return
@@ -37,7 +55,7 @@ export function FeatureExplorer() {
     const activeTone = CHANNEL_TONES[activeFeature.channel]
 
     return (
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+        <div ref={sectionRef} style={{ minHeight: sectionMinHeight }} className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
             <ol className="relative space-y-1" aria-label="Every Remem feature, by channel">
                 {features.map((feature, index) => {
                     const isActive = index === active

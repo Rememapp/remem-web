@@ -2,7 +2,7 @@
 
 import { CheckCircle2, Eye, FileText, MousePointerClick, ScanSearch, Send, UserRound, type LucideIcon } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -16,8 +16,8 @@ interface Step {
 const steps: Step[] = [
     {
         icon: UserRound,
-        title: 'Create your profile',
-        description: 'Answer questions in the Memory Builder, dictate, or upload your CV. Remem confirms each fact with you before saving it — locally.',
+        title: 'Teach Remem about yourself',
+        description: "Chat about yourself in Remem's Memory Builder, dictate, or upload your CV. Remem remembers facts and save them — locally.",
         visual: ['Name · confirmed', 'Employment history · confirmed', 'Education · confirmed'],
     },
     {
@@ -33,16 +33,16 @@ const steps: Step[] = [
         visual: ['First name → Alex', 'Employer → Northwind Labs', 'Open question → needs a draft'],
     },
     {
-        icon: Eye,
-        title: 'Review suggestions',
-        description: 'Every value is shown before anything is touched. Edit, rewrite AI drafts, or skip fields entirely.',
-        visual: ['12 matches ready', '1 draft to review', 'Nothing filled yet'],
-    },
-    {
         icon: MousePointerClick,
         title: 'Fill the form',
         description: 'One click. Forty fields. Done in seconds instead of twenty minutes.',
         visual: ['Filling 13 fields…', 'Done in 1.2s', 'Everything editable'],
+    },
+    {
+        icon: Eye,
+        title: 'Review suggestions',
+        description: 'Every value is shown before anything is touched. Edit, rewrite AI drafts, or skip fields entirely.',
+        visual: ['13 matches filled', 'Ready for review', 'Rephrase explainations with AI'],
     },
     {
         icon: Send,
@@ -60,6 +60,23 @@ export function Timeline() {
     const reducedMotion = useReducedMotion()
     const containerRef = useRef<HTMLDivElement>(null)
 
+    // Pin the whole section to the tallest height it has ever rendered, so the list expanding
+    // or collapsing as the active step changes can't shrink the section and nudge the waitlist
+    // form further down the page. Only ever grows, never shrinks, and settles after first paint.
+    const [sectionMinHeight, setSectionMinHeight] = useState<number>()
+
+    useLayoutEffect(() => {
+        const el = containerRef.current
+        if (!el) return
+        const observer = new ResizeObserver((entries) => {
+            const height = entries[0]?.contentRect.height
+            if (!height) return
+            setSectionMinHeight((prev) => (prev === undefined ? height : Math.max(prev, height)))
+        })
+        observer.observe(el)
+        return () => observer.disconnect()
+    }, [])
+
     // Auto-advance until the visitor interacts; skipped entirely under reduced motion.
     useEffect(() => {
         if (paused || reducedMotion) return
@@ -75,7 +92,7 @@ export function Timeline() {
     const activeStep = steps[active] ?? steps[0]!
 
     return (
-        <div ref={containerRef} className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+        <div ref={containerRef} style={{ minHeight: sectionMinHeight }} className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
             <ol className="relative space-y-1" aria-label="How Remem works, step by step">
                 {steps.map((step, index) => {
                     const isActive = index === active
@@ -98,7 +115,7 @@ export function Timeline() {
                                 >
                                     <step.icon aria-hidden className="size-4.5" />
                                 </span>
-                                <span>
+                                <span className="min-w-0">
                                     <span className={cn('block font-medium transition-colors', isActive ? 'text-foreground' : 'text-muted-foreground')}>
                                         <span className="mr-2 font-mono text-xs tnum opacity-60">{String(index + 1).padStart(2, '0')}</span>
                                         {step.title}

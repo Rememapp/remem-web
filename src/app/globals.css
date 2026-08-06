@@ -236,6 +236,26 @@
             animation-range: entry 10% entry 55%;
         }
     }
+
+    /*
+     * Theme toggle — the new palette irises in from the button that was
+     * clicked (coordinates set as inline custom properties in ThemeToggle),
+     * instead of the whole page flashing to the new colors at once.
+     */
+    ::view-transition-old(root) {
+        animation: none;
+    }
+    ::view-transition-new(root) {
+        animation: theme-reveal 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes theme-reveal {
+        from {
+            clip-path: circle(0px at var(--theme-toggle-x, 100%) var(--theme-toggle-y, 0%));
+        }
+        to {
+            clip-path: circle(var(--theme-toggle-r, 150%) at var(--theme-toggle-x, 100%) var(--theme-toggle-y, 0%));
+        }
+    }
 }
 
 /* Mono readout label — the instrument's small-caps voice. */

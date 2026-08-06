@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { EarlyAccessBanner } from '@/components/early-access-banner'
 import { FaqList } from '@/components/faq-list'
 import { JsonLd } from '@/components/json-ld'
 import { Reveal } from '@/components/motion/reveal'
@@ -29,6 +30,7 @@ export default function FaqPage() {
             <PageHeader title="Everything people ask us" description="If yours isn't here, ask — we answer every message." />
             <section className="container-page pb-12">
                 <Reveal className="mx-auto max-w-2xl">
+                    <EarlyAccessBanner />
                     <FaqList items={faqs} />
                 </Reveal>
             </section>

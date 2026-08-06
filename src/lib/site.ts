@@ -2,11 +2,11 @@ export const siteConfig = {
     name: 'Remem',
     tagline: 'Never repeat yourself.',
     description: 'Remem is a privacy-first browser memory. Fill your information once, review before it fills any form, and keep every byte of your data under your control.',
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://remem.app',
-    email: 'hello@remem.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://remem.itssvk.dev',
+    email: 'hello@remem.itssvk.dev',
     links: {
-        twitter: 'https://x.com/rememapp',
-        github: 'https://github.com/remem-app/remem',
+        twitter: 'https://x.com/ShouvikMohanta',
+        github: 'https://github.com/ItsSVK/remem-web',
         roadmap: '/changelog',
     },
     keywords: [

@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 const sections = [
     {
         heading: 'What Remem is',
-        body: 'Remem is a browser extension that stores your information locally and helps you reuse it on web forms, plus an optional hosted AI service for drafting open-ended answers. These terms cover the extension, the AI service, and this website.',
+        body: 'Remem is a local-first browser memory that stores your information on your device and helps you reuse it across web forms, plus an optional hosted AI service for drafting open-ended answers. These terms cover the browser memory, the AI service, and this website.',
     },
     {
         heading: 'Your data is yours',
-        body: 'You own everything you store in Remem. We claim no rights over your profiles, answers, or documents. Export and deletion are always available.',
+        body: 'You own everything you store in Remem — your profiles, answers, and documents. Delete your local memory anytime, in one action. If you’ve turned on encrypted backup, you can restore it from your own Google Drive. Remem never claims ownership of anything you save.',
     },
     {
         heading: 'Your responsibilities',
@@ -32,7 +32,7 @@ const sections = [
     },
     {
         heading: 'Availability',
-        body: 'The local extension works offline and does not depend on us. The AI service and cloud backup are provided “as is” and may occasionally be unavailable. We are not liable for indirect damages, and our total liability is limited to what you paid us in the last twelve months.',
+        body: 'The local browser memory runs entirely on your device — it works independently of us and doesn’t need our servers to fill a form. The AI writing service and cloud backup depend on a connection to us, so they may occasionally be unavailable. We work to keep them reliable, but we can’t guarantee uninterrupted availability. We’re not liable for indirect damages, and our total liability is limited to what you paid us in the last twelve months.',
     },
     {
         heading: 'Changes',
@@ -40,7 +40,7 @@ const sections = [
     },
     {
         heading: 'Contact',
-        body: 'Questions about these terms: hello@remem.app.',
+        body: 'Questions? Email us at hello@remem.itssvk.dev — a real person will reply.',
     },
 ]
 
@@ -49,13 +49,24 @@ export default function TermsPage() {
         <>
             <PageHeader title="Terms of service" description="Short, honest, and current as of August 2026." />
             <section className="container-page pb-24">
-                <Reveal className="mx-auto max-w-2xl space-y-10">
-                    {sections.map((section) => (
-                        <div key={section.heading}>
-                            <h2 className="font-display text-xl font-semibold">{section.heading}</h2>
-                            <p className="mt-3 leading-relaxed text-muted-foreground">{section.body}</p>
+                <Reveal className="mx-auto max-w-2xl">
+                    <div className="rounded-lg border border-primary/20 bg-primary/5 p-6 sm:p-7">
+                        <div className="inline-flex items-center gap-2 rounded-sm border border-primary/30 bg-background/60 px-2.5 py-1">
+                            <span aria-hidden className="size-1.5 bg-primary" />
+                            <span className="readout text-[10px] text-primary">Our principles</span>
                         </div>
-                    ))}
+                        <p className="mt-3 leading-relaxed text-foreground">
+                            Remem exists to reduce repetition — not remove responsibility. You stay in control of what gets filled and what gets submitted.
+                        </p>
+                    </div>
+                    <div className="mt-12 space-y-12">
+                        {sections.map((section) => (
+                            <div key={section.heading}>
+                                <h2 className="font-display text-xl font-bold tracking-tight sm:text-2xl">{section.heading}</h2>
+                                <p className="mt-3 leading-relaxed text-muted-foreground">{section.body}</p>
+                            </div>
+                        ))}
+                    </div>
                 </Reveal>
             </section>
         </>
