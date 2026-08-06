@@ -3,13 +3,14 @@ import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact-form'
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
+import { pageMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/site'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'Contact',
     description: 'Questions, feedback, or press — get in touch with the Remem team. We read every message.',
-    alternates: { canonical: '/contact' },
-}
+    path: '/contact',
+})
 
 export default function ContactPage() {
     return (

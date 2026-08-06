@@ -1,4 +1,4 @@
-import { Brain, Cloud, Download, FileSearch, MousePointerClick, PenLine, ScanSearch, Search, UserRound, Eye, type LucideIcon } from 'lucide-react'
+import { Brain, Cloud, FileSearch, MousePointerClick, PenLine, ScanSearch, UserRound, Eye, type LucideIcon } from 'lucide-react'
 
 /**
  * Features are classified by channel, matching the site's track inks:

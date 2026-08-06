@@ -7,12 +7,13 @@ import { Reveal } from '@/components/motion/reveal'
 import { PageHeader } from '@/components/page-header'
 import { FinalCta } from '@/components/sections/final-cta'
 import { faqs } from '@/lib/faqs'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'FAQ',
     description: 'How Remem differs from browser autofill, where your data is stored, what the AI does and does not do, and every other question we get asked.',
-    alternates: { canonical: '/faq' },
-}
+    path: '/faq',
+})
 
 const faqJsonLd = {
     '@context': 'https://schema.org',

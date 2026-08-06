@@ -5,13 +5,14 @@ import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
 import { Badge } from '@/components/ui/badge'
 import { getChangelog } from '@/lib/changelog'
+import { pageMetadata } from '@/lib/metadata'
 import { formatDate } from '@/lib/utils'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'Changelog',
     description: 'What we are building and shipping on the way to the Remem launch.',
-    alternates: { canonical: '/changelog' },
-}
+    path: '/changelog',
+})
 
 export default function ChangelogPage() {
     const entries = getChangelog()
@@ -24,7 +25,7 @@ export default function ChangelogPage() {
                     {entries.map((entry) => (
                         <Reveal key={entry.version}>
                             <article className="relative border-l border-border pl-8">
-                                <span aria-hidden className="absolute top-1.5 -left-[5px] size-2.5 bg-primary" />
+                                <span aria-hidden className="absolute top-1.5 -left-1.25 size-2.5 bg-primary" />
                                 <div className="flex flex-wrap items-center gap-3">
                                     <Badge>{entry.version}</Badge>
                                     <time dateTime={entry.date} className="font-mono text-xs tracking-wide text-muted-foreground tnum">

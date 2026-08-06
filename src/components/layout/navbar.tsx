@@ -55,13 +55,7 @@ export function Navbar() {
                                     active ? 'text-foreground' : 'text-muted-foreground hover:text-foreground',
                                 )}
                             >
-                                <span
-                                    aria-hidden
-                                    className={cn(
-                                        'mr-1.5 inline-block size-1.5 align-[0.05em] transition-colors',
-                                        active ? 'bg-primary' : 'bg-transparent group-hover:bg-steel',
-                                    )}
-                                />
+                                <span aria-hidden className={cn('mr-1.5 inline-block size-1.5 align-[0.05em] transition-colors', active ? 'bg-primary' : 'bg-transparent group-hover:bg-steel')} />
                                 {link.label}
                             </Link>
                         )

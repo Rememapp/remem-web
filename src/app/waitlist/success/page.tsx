@@ -5,13 +5,14 @@ import Link from 'next/link'
 import { Reveal } from '@/components/motion/reveal'
 import { SquareDot } from '@/components/section-heading'
 import { Button } from '@/components/ui/button'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: "You're on the list",
     description: 'Waitlist confirmation for Remem early access.',
-    robots: { index: false },
-    alternates: { canonical: '/waitlist/success' },
-}
+    path: '/waitlist/success',
+    noindex: true,
+})
 
 export default function WaitlistSuccessPage() {
     return (

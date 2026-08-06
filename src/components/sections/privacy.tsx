@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button'
 /** Each guarantee is a readout line: mono key, plain-language value, status ink. */
 const guarantees = [
     { key: 'storage.location', title: 'Everything local', detail: 'Your memory lives on your device, not on our servers.', status: 'LOCAL', tone: 'text-primary border-primary/40' },
-    { key: 'backup.route', title: 'Backup to your own Drive', detail: 'Off by default. Encrypted before it uploads to your Google Drive — never to us.', status: 'OPT-IN', tone: 'text-track-career border-track-career/40' },
+    {
+        key: 'backup.route',
+        title: 'Backup to your own Drive',
+        detail: 'Off by default. Encrypted before it uploads to your Google Drive — never to us.',
+        status: 'OPT-IN',
+        tone: 'text-track-career border-track-career/40',
+    },
     { key: 'data.sale', title: 'No selling your data', detail: 'We could not sell what we do not have.', status: 'NO DATA', tone: 'text-primary border-primary/40' },
     { key: 'uploads.silent', title: 'No silent uploads', detail: 'Forms and pages are never uploaded automatically.', status: 'NEVER', tone: 'text-boundary border-boundary/40' },
     { key: 'form.submit', title: 'Never auto-submits', detail: 'A hard rule in the code, not a toggle in the settings.', status: 'NEVER', tone: 'text-boundary border-boundary/40' },

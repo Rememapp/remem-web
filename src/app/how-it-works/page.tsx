@@ -4,12 +4,13 @@ import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
 import { FinalCta } from '@/components/sections/final-cta'
 import { Timeline } from '@/components/timeline'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'How it works',
     description: 'From creating your local profile to submitting a form yourself — the six-step loop behind Remem, and why it never auto-submits anything.',
-    alternates: { canonical: '/how-it-works' },
-}
+    path: '/how-it-works',
+})
 
 export default function HowItWorksPage() {
     return (

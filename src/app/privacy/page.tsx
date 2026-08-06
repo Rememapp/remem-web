@@ -2,20 +2,19 @@ import type { Metadata } from 'next'
 
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'Privacy policy',
     description: 'The Remem privacy policy in plain language: your data lives on your device, backup goes encrypted to your own Google Drive, and we have nothing to sell.',
-    alternates: { canonical: '/privacy' },
-}
+    path: '/privacy',
+})
 
 const sections = [
     {
         heading: 'The short version',
         lead: 'We can’t read or sell data we don’t have.',
-        body: [
-            'Your memory data — profiles, answers, documents — is stored on your device, not ours. The only personal data this website collects is your email address, if you join the waitlist.',
-        ],
+        body: ['Your memory data — profiles, answers, documents — is stored on your device, not ours. The only personal data this website collects is your email address, if you join the waitlist.'],
     },
     {
         heading: 'Local storage',

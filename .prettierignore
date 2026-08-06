@@ -2,3 +2,4 @@ node_modules
 .next
 bun.lock
 public
+skills-lock.json

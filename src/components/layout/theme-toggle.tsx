@@ -57,10 +57,7 @@ export function ThemeToggle() {
                 />
                 <Moon
                     aria-hidden
-                    className={cn(
-                        'absolute inset-0 size-4 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]',
-                        isLight ? 'scale-50 rotate-90 opacity-0' : 'scale-100 rotate-0 opacity-100',
-                    )}
+                    className={cn('absolute inset-0 size-4 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]', isLight ? 'scale-50 rotate-90 opacity-0' : 'scale-100 rotate-0 opacity-100')}
                 />
             </span>
         </Button>

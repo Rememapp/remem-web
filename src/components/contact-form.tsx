@@ -81,7 +81,7 @@ export function ContactForm() {
                 {errors.message ? <p className="text-sm text-destructive">{errors.message.message}</p> : null}
             </div>
             {/* Honeypot — hidden from people, tempting to bots. */}
-            <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] size-px opacity-0" {...register('company')} />
+            <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] size-px opacity-0" {...register('company')} />
             {turnstile.widget}
             {result && !result.ok ? (
                 <p role="alert" className="text-sm text-destructive">

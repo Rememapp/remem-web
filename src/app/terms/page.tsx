@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'Terms of service',
     description: 'The Remem terms of service, in language you can actually read.',
-    alternates: { canonical: '/terms' },
-}
+    path: '/terms',
+})
 
 const sections = [
     {

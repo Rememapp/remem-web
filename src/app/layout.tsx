@@ -8,6 +8,7 @@ import { Navbar } from '@/components/layout/navbar'
 import { ThemeProvider } from '@/components/layout/theme-provider'
 import { JsonLd } from '@/components/json-ld'
 import { siteConfig } from '@/lib/site'
+import { Analytics } from '@vercel/analytics/next'
 
 import './globals.css'
 
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: `${siteConfig.name} — ${siteConfig.tagline}`,
         description: siteConfig.description,
-        creator: '@rememapp',
+        creator: '@ShouvikMohanta',
     },
     icons: {
         icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -81,6 +82,13 @@ const softwareJsonLd = {
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 }
 
+const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+}
+
 const directionContract = `impeccable direction contract — seed f17b9659 (challenger: collider event display)
 THESIS: The page scan is one held collision event: facts curve out of your memory as
 classified signal tracks, reviewed while frozen. Refuses the dark-SaaS glow page with
@@ -117,8 +125,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <main id="main">{children}</main>
                     <Footer />
                 </ThemeProvider>
+                <Analytics />
                 <JsonLd data={organizationJsonLd} />
                 <JsonLd data={softwareJsonLd} />
+                <JsonLd data={websiteJsonLd} />
             </body>
         </html>
     )

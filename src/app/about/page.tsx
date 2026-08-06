@@ -7,13 +7,13 @@ import { Reveal } from '@/components/motion/reveal'
 import { SquareDot } from '@/components/section-heading'
 import { FinalCta } from '@/components/sections/final-cta'
 import { Button } from '@/components/ui/button'
-import { siteConfig } from '@/lib/site'
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: 'About',
     description: 'Why we are building Remem: a browser memory that remembers for you, without your data ever leaving your hands.',
-    alternates: { canonical: '/about' },
-}
+    path: '/about',
+})
 
 const principles = [
     {

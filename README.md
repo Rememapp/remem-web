@@ -26,11 +26,11 @@ bun run format     # prettier
 
 Copy `.env.example` to `.env.local`. Everything is optional in development:
 
-| Variable                                | Purpose                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------- |
+| Variable                                | Purpose                                                                        |
+| --------------------------------------- | ------------------------------------------------------------------------------ |
 | `NEXT_PUBLIC_SITE_URL`                  | Canonical site URL (sitemap, OG, RSS). Defaults to `https://remem.itssvk.dev`. |
-| `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` | Waitlist storage via Resend Audiences. Dev fallback: `.data/waitlist.json`. |
-| `CONTACT_TO_EMAIL`                      | Contact-form delivery via Resend. Unset: logs to the server console.        |
+| `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` | Waitlist storage via Resend Audiences. Dev fallback: `.data/waitlist.json`.    |
+| `CONTACT_TO_EMAIL`                      | Contact-form delivery via Resend. Unset: logs to the server console.           |
 
 ## Content
 

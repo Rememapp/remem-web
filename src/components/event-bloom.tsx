@@ -126,7 +126,7 @@ export function EventBloom({ className }: { className?: string }) {
               }
 
     return (
-        <div aria-hidden className={cn('relative aspect-[8/7] w-full select-none', className)}>
+        <div aria-hidden className={cn('relative aspect-8/7 w-full select-none', className)}>
             <svg viewBox="0 0 640 560" fill="none" className="absolute inset-0 size-full">
                 {/* Detector layers around the vertex */}
                 <g stroke="var(--steel)" opacity="0.85">
@@ -174,7 +174,7 @@ export function EventBloom({ className }: { className?: string }) {
             {CHIPS.map((chip) => (
                 <motion.div key={chip.label} className="absolute hidden -translate-x-1/2 -translate-y-1/2 md:block" style={chip.style} {...appear(chip.delay)}>
                     <div className={cn('rounded-sm border bg-card/95 px-2.5 py-1.5 shadow-[0_6px_20px_-6px_rgba(0,0,0,0.4)]', TONE[chip.tone])}>
-                        <p className="font-mono text-[10px] leading-none font-semibold tracking-[0.1em]">{chip.label}</p>
+                        <p className="font-mono text-[10px] leading-none font-semibold tracking-widest">{chip.label}</p>
                         <p className="mt-1 text-xs leading-none text-foreground">{chip.value}</p>
                     </div>
                 </motion.div>
@@ -183,7 +183,7 @@ export function EventBloom({ className }: { className?: string }) {
             {/* Boundary label */}
             <motion.div className="absolute right-0 bottom-[4%] hidden md:block" {...appear(0.7)}>
                 <div className="rounded-sm border border-boundary/40 bg-card/95 px-2.5 py-1.5">
-                    <p className="font-mono text-[10px] leading-none font-semibold tracking-[0.1em] text-boundary">form.submit</p>
+                    <p className="font-mono text-[10px] leading-none font-semibold tracking-widest text-boundary">form.submit</p>
                     <p className="mt-1 text-xs leading-none text-foreground">no route — always yours</p>
                 </div>
             </motion.div>

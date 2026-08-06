@@ -214,7 +214,10 @@ export function InteractiveDemo() {
                         <span className="size-3 rounded-full bg-amber-400/80" />
                         <span className="size-3 rounded-full bg-emerald-400/80" />
                     </div>
-                    <div aria-hidden className="mx-auto flex h-7 w-full max-w-sm min-w-0 items-center justify-center overflow-hidden rounded-md bg-secondary px-3 font-mono text-[11px] tracking-wide text-muted-foreground">
+                    <div
+                        aria-hidden
+                        className="mx-auto flex h-7 w-full max-w-sm min-w-0 items-center justify-center overflow-hidden rounded-md bg-secondary px-3 font-mono text-[11px] tracking-wide text-muted-foreground"
+                    >
                         <span className="truncate">jobs.example.com/apply/senior-engineer</span>
                     </div>
                     <button
@@ -339,7 +342,7 @@ export function InteractiveDemo() {
                             <button
                                 type="button"
                                 onClick={() => setPhase('submitted')}
-                                className="rounded-md bg-foreground px-5 py-2 font-mono text-[11px] font-semibold tracking-[0.1em] text-background uppercase transition-transform outline-none hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98]"
+                                className="rounded-md bg-foreground px-5 py-2 font-mono text-[11px] font-semibold tracking-widest text-background uppercase transition-transform outline-none hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.98]"
                             >
                                 Submit application
                             </button>
@@ -366,7 +369,7 @@ export function InteractiveDemo() {
                             {/* Coach step 2 — anchored to the scanner, outside the popup surface */}
                             <AnimatePresence>
                                 {coachScan && (
-                                    <CoachChip key="coach-scan" arrow="right" className="top-[276px] -left-40">
+                                    <CoachChip key="coach-scan" arrow="right" className="top-69 -left-40">
                                         Hit “Scan the page”
                                     </CoachChip>
                                 )}
@@ -383,7 +386,10 @@ export function InteractiveDemo() {
                                         className="relative flex items-center rounded-full border border-amber-500/25 bg-amber-950/20 p-0.5 text-[8px] font-bold uppercase shadow-[0_0_14px_rgba(251,191,36,0.09)]"
                                         title="This embedded popup runs in demo mode"
                                     >
-                                        <span aria-hidden className="absolute top-0.5 right-0.5 bottom-0.5 left-[calc(50%+1px)] rounded-full border border-amber-400/35 bg-amber-950/80 shadow-[0_0_16px_rgba(251,191,36,0.3)]" />
+                                        <span
+                                            aria-hidden
+                                            className="absolute top-0.5 right-0.5 bottom-0.5 left-[calc(50%+1px)] rounded-full border border-amber-400/35 bg-amber-950/80 shadow-[0_0_16px_rgba(251,191,36,0.3)]"
+                                        />
                                         <span className="relative z-10 flex items-center gap-1 px-2 py-0.5 tracking-wider text-slate-600">
                                             <span aria-hidden className="size-1 shrink-0 rounded-full bg-slate-700" />
                                             Live
@@ -466,10 +472,22 @@ export function InteractiveDemo() {
                                         />
 
                                         {/* Corner brackets */}
-                                        <span aria-hidden className="absolute top-2 left-2 size-2.5 border-t-[1.5px] border-l-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:border-violet-400" />
-                                        <span aria-hidden className="absolute top-2 right-2 size-2.5 border-t-[1.5px] border-r-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 group-hover:border-violet-400" />
-                                        <span aria-hidden className="absolute bottom-2 left-2 size-2.5 border-b-[1.5px] border-l-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-violet-400" />
-                                        <span aria-hidden className="absolute right-2 bottom-2 size-2.5 border-b-[1.5px] border-r-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-violet-400" />
+                                        <span
+                                            aria-hidden
+                                            className="absolute top-2 left-2 size-2.5 border-t-[1.5px] border-l-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:border-violet-400"
+                                        />
+                                        <span
+                                            aria-hidden
+                                            className="absolute top-2 right-2 size-2.5 border-t-[1.5px] border-r-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5 group-hover:border-violet-400"
+                                        />
+                                        <span
+                                            aria-hidden
+                                            className="absolute bottom-2 left-2 size-2.5 border-b-[1.5px] border-l-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-violet-400"
+                                        />
+                                        <span
+                                            aria-hidden
+                                            className="absolute right-2 bottom-2 size-2.5 border-b-[1.5px] border-r-[1.5px] border-violet-400/50 transition-all duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-violet-400"
+                                        />
 
                                         {/* Laser sweep — visible while scanning, on hover otherwise */}
                                         <span
@@ -489,7 +507,10 @@ export function InteractiveDemo() {
                                                     <RotateCcw className="size-3.5 text-violet-400/80 transition-all duration-300 group-hover:scale-110 group-hover:text-violet-300" />
                                                 ) : (
                                                     <ScanSearch
-                                                        className={cn('size-3.5 text-violet-400/80 transition-all duration-300 group-hover:scale-110 group-hover:text-violet-300', !running && 'animate-pulse')}
+                                                        className={cn(
+                                                            'size-3.5 text-violet-400/80 transition-all duration-300 group-hover:scale-110 group-hover:text-violet-300',
+                                                            !running && 'animate-pulse',
+                                                        )}
                                                     />
                                                 )}
                                             </span>
@@ -574,7 +595,9 @@ export function InteractiveDemo() {
                                     <div className="h-full rounded-full bg-violet-500 transition-[width] duration-300 ease-out" style={{ width: `${percent}%` }} />
                                 </div>
                             )}
-                            {phase === 'done' && <p className="border-t border-slate-900 pt-2 pl-8 text-[11px] leading-relaxed text-slate-400">The open answer is an AI draft — review it before you submit.</p>}
+                            {phase === 'done' && (
+                                <p className="border-t border-slate-900 pt-2 pl-8 text-[11px] leading-relaxed text-slate-400">The open answer is an AI draft — review it before you submit.</p>
+                            )}
                         </motion.div>
                     )}
 
@@ -628,7 +651,7 @@ export function InteractiveDemo() {
                                 <button
                                     type="button"
                                     onClick={reset}
-                                    className="mt-2 flex items-center gap-2 rounded-md border border-border px-5 py-2 font-mono text-xs font-medium tracking-[0.1em] uppercase transition-colors outline-none hover:bg-secondary/60 focus-visible:ring-2 focus-visible:ring-ring"
+                                    className="mt-2 flex items-center gap-2 rounded-md border border-border px-5 py-2 font-mono text-xs font-medium tracking-widest uppercase transition-colors outline-none hover:bg-secondary/60 focus-visible:ring-2 focus-visible:ring-ring"
                                 >
                                     <RotateCcw aria-hidden className="size-4" />
                                     Replay demo

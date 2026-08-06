@@ -36,6 +36,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 ## Capabilities and Constraints
 
 **Confirmed capabilities:**
+
 - Local-first storage (browser storage on device). No server copy of user data.
 - Deterministic field matching across varied label naming conventions.
 - AI writing for genuinely open-ended answers (cover letters, essays, motivation statements). AI needs a network connection; it does not persist memory server-side.
@@ -48,6 +49,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - Open-source extension; AI API is closed-source.
 
 **Hard constraints (copy must never violate):**
+
 - Never auto-submits. Hard-coded, not configurable.
 - Forms and pages are never uploaded automatically.
 - Local data is NOT encrypted at rest — must never claim "encrypted storage" or "encrypted at rest."
@@ -56,6 +58,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - The extension currently targets job applications only (ATS platforms). Government, university, insurance, healthcare, checkout forms are roadmap — copy must not claim support for them.
 
 **Open decisions (do not invent):**
+
 - Final domain (temporary: remem.itssvk.dev, a subdomain of the personal site — a proper domain hasn't been bought yet).
 - Social links (X, GitHub) are placeholders.
 - Launch pricing: core local memory + form fill will be free; AI writing paid plan is the direction but TBD — copy should not commit to specific tiers or prices yet.

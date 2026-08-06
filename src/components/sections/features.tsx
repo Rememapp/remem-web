@@ -21,10 +21,7 @@ function Panel({ id, tone, children, className }: { id: string; tone: string; ch
 export function Features() {
     return (
         <section className="container-page py-24 md:py-32">
-            <SectionHeading
-                title="Built for the job hunt"
-                description="Remem does one brutal workflow — job applications — exceptionally well. Other form types come later."
-            />
+            <SectionHeading title="Built for the job hunt" description="Remem does one brutal workflow — job applications — exceptionally well. Other form types come later." />
 
             <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-6">
                 {/* One reviewed click — the hero capability */}
@@ -81,7 +78,9 @@ export function Features() {
                                     <path d="M30,2 Q50,14 96,16" strokeDasharray="3 4" opacity="0.6" />
                                     <path d="M40,2 Q55,10 96,14" strokeDasharray="3 4" opacity="0.6" />
                                 </svg>
-                                <p className="w-fit rounded-sm border border-primary/40 bg-primary/10 px-2 py-1 font-mono text-[10px] font-semibold tracking-wide text-primary">identity.givenName → Alex</p>
+                                <p className="w-fit rounded-sm border border-primary/40 bg-primary/10 px-2 py-1 font-mono text-[10px] font-semibold tracking-wide text-primary">
+                                    identity.givenName → Alex
+                                </p>
                             </div>
                         </div>
                     </Panel>
@@ -133,7 +132,9 @@ export function Features() {
                                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">AI writes the “why us?” answers from your real history — you edit and approve.</p>
                             </div>
                             <div aria-hidden className="mt-6 select-none">
-                                <p className="rounded-md border border-track-answer/30 bg-background px-3.5 py-2.5 text-[11px] text-muted-foreground italic">“After seven years shipping developer tools…”</p>
+                                <p className="rounded-md border border-track-answer/30 bg-background px-3.5 py-2.5 text-[11px] text-muted-foreground italic">
+                                    “After seven years shipping developer tools…”
+                                </p>
                             </div>
                         </div>
                     </Panel>

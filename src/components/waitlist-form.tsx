@@ -84,7 +84,7 @@ export function WaitlistForm({ size = 'hero', source, className }: WaitlistFormP
                     />
                 </div>
                 {/* Honeypot — hidden from people, tempting to bots. */}
-                <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] size-px opacity-0" {...register('company')} />
+                <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute left-[-9999px] size-px opacity-0" {...register('company')} />
                 <Button type="submit" size={large ? 'lg' : 'default'} disabled={pending}>
                     {pending ? <Loader2 aria-hidden className="animate-spin" /> : null}
                     {pending ? 'Joining…' : 'Join waitlist'}
