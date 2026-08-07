@@ -17,23 +17,23 @@ const sections = [
     },
     {
         heading: 'Your data is yours',
-        body: 'You own everything you store in Remem — your profiles, answers, and documents. Delete your local memory anytime, in one action. If you’ve turned on encrypted backup, you can restore it from your own Google Drive. Remem never claims ownership of anything you save.',
+        body: "You own everything you store in Remem — your profiles, answers, and documents. Delete your local memory anytime, in one action. If you've turned on encrypted backup, you can restore it from your own Google Drive. Remem never claims ownership of anything you save.",
     },
     {
         heading: 'Your responsibilities',
-        body: 'You review what Remem fills before you submit it — that is the product’s core design, and it is also your job. You are responsible for the accuracy of anything you submit and for using Remem only on forms you are entitled to fill.',
+        body: "You review what Remem fills before you submit it — that is the product's core design, and it is also your job. You are responsible for the accuracy of anything you submit and for using Remem only on forms you are entitled to fill.",
     },
     {
         heading: 'Acceptable use',
-        body: 'Don’t use Remem to misrepresent your identity, automate abuse of websites, or violate the terms of the sites you visit. Remem is built for people filling their own forms with their own information.',
+        body: "Don't use Remem to misrepresent your identity, automate abuse of websites, or violate the terms of the sites you visit. Remem is built for people filling their own forms with their own information.",
     },
     {
         heading: 'The AI service',
-        body: 'AI drafts are suggestions, generated from the context you provide. Read them before using them. We don’t guarantee that generated text is accurate or suitable — you do, by reviewing it.',
+        body: "AI drafts are suggestions, generated from the context you provide. Read them before using them. We don't guarantee that generated text is accurate or suitable — you do, by reviewing it.",
     },
     {
         heading: 'Availability',
-        body: 'The local browser memory runs entirely on your device — it works independently of us and doesn’t need our servers to fill a form. The AI writing service and cloud backup depend on a connection to us, so they may occasionally be unavailable. We work to keep them reliable, but we can’t guarantee uninterrupted availability. We’re not liable for indirect damages, and our total liability is limited to what you paid us in the last twelve months.',
+        body: "The local browser memory runs entirely on your device — it works independently of us and doesn't need our servers to fill a form. The AI writing service and cloud backup depend on a connection to us, so they may occasionally be unavailable. We work to keep them reliable, but we can't guarantee uninterrupted availability. We're not liable for indirect damages, and our total liability is limited to what you paid us in the last twelve months.",
     },
     {
         heading: 'Changes',
@@ -41,7 +41,7 @@ const sections = [
     },
     {
         heading: 'Contact',
-        body: 'Questions? Email us at hello@remem.itssvk.dev — a real person will reply.',
+        body: 'Questions? Email us at remem@itssvk.dev — a real person will reply.',
     },
 ]
 

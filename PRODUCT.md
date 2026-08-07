@@ -69,7 +69,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - **Tagline:** "Never repeat yourself."
 - **Voice:** Short, confident sentences; no hedging, no superlatives ("supercharge", "revolutionize", "unlock"). Linear/Arc register — direct and factual.
 - **Visual identity:** Dark mode first, violet/indigo accent, Outfit (display) + Geist (body), no gradients.
-- **Contact:** hello@remem.itssvk.dev
+- **Contact:** remem@itssvk.dev
 - **Open source extension:** a confirmed, verifiable brand commitment — privacy claims are in the code.
 
 ## Evidence on Hand
