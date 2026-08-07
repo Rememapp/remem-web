@@ -21,7 +21,7 @@ export function Hero() {
                     </Reveal>
                     <Reveal immediate delay={0.1}>
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
-                            Teach Remem about yourself once. It fills applications from your memory on your device. You review everything, then submit with confidence.
+                            Remem is a browser extension that remembers your information once, then fills job applications from your memory on your device. You review every field, then press submit yourself.
                         </p>
                     </Reveal>
                     <Reveal immediate delay={0.2} className="mt-8 flex flex-col gap-4">
