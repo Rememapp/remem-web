@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { EventBloom } from '@/components/event-bloom'
 import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
-import { SquareDot } from '@/components/section-heading'
 import { Button } from '@/components/ui/button'
 import { WaitlistForm } from '@/components/waitlist-form'
 
@@ -14,10 +13,7 @@ export function Hero() {
             <div className="grid items-center gap-12 lg:grid-cols-12">
                 <div className="lg:col-span-5">
                     <Reveal immediate from="down">
-                        <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">
-                            Never repeat yourself
-                            <SquareDot />
-                        </h1>
+                        <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">Never repeat yourself</h1>
                     </Reveal>
                     <Reveal immediate delay={0.1}>
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">

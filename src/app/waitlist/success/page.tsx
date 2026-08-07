@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { Reveal } from '@/components/motion/reveal'
-import { SquareDot } from '@/components/section-heading'
 import { Button } from '@/components/ui/button'
 import { pageMetadata } from '@/lib/metadata'
 
@@ -27,10 +26,7 @@ export default function WaitlistSuccessPage() {
                 </div>
             </Reveal>
             <Reveal immediate delay={0.1}>
-                <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">
-                    You&apos;re in
-                    <SquareDot />
-                </h1>
+                <h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">You&apos;re in</h1>
             </Reveal>
             <Reveal immediate delay={0.18}>
                 <p className="mt-4 max-w-md text-lg leading-relaxed text-muted-foreground">

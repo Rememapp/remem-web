@@ -70,7 +70,7 @@ The site refuses two defaults on sight: the ambient particle-and-glow background
 - Fact-type color classification (violet/cyan/amber/red) that never wavers in meaning across the whole site
 - Machined, square-cornered surfaces; mono-caps readout labels; tabular numerals wherever data appears
 - A fixed SVG detector-field background — geometry, not particles or gradients
-- No eyebrows/kickers above headings; headings carry their own weight, closed with a violet square full stop
+- No eyebrows/kickers above headings; headings carry their own weight, plain, with no closing mark
 - CSS-only entrance motion by default; framer-motion reserved for the one authored moment (the hero event) plus the interactive demo and the step-switcher pattern (timeline, feature explorer)
 
 ## Colors
@@ -79,7 +79,7 @@ The palette classifies facts, not screens. A color's meaning is fixed everywhere
 
 ### Primary
 
-- **Signal Violet** (`oklch(0.67 0.19 293)` dark / `oklch(0.5 0.24 293)` light): Identity facts (name, email, addresses), the brand accent, primary buttons, links, focus rings, and the caret/selection color. The signature `SquareDot` full stop after headings is always this color.
+- **Signal Violet** (`oklch(0.67 0.19 293)` dark / `oklch(0.5 0.24 293)` light): Identity facts (name, email, addresses), the brand accent, primary buttons, links, focus rings, and the caret/selection color.
 
 ### Secondary
 
@@ -114,7 +114,7 @@ The palette classifies facts, not screens. A color's meaning is fixed everywhere
 
 ### Hierarchy
 
-- **Display** (700 weight, `text-4xl`–`text-7xl`, tight/`-0.02em` tracking, uppercase): Page and section headings (`h1`, `h2`). Always closed with the violet `SquareDot` (a `0.13em` square, inline after the last word) as the world's signature full stop. Uppercase is load-bearing — it's what makes Chakra Petch read as instrument lettering rather than a generic display face.
+- **Display** (700 weight, `text-4xl`–`text-7xl`, tight/`-0.02em` tracking, uppercase): Page and section headings (`h1`, `h2`), set plain with no closing mark. Uppercase is load-bearing — it's what makes Chakra Petch read as instrument lettering rather than a generic display face.
 - **Body** (400 weight, `text-base`–`text-lg`, 1.6 line-height): Paragraph copy, 65–75ch measure via `max-w-xl`/`max-w-2xl` containers.
 - **Label/Readout** (600 weight, 10–11px, `0.12em`–`0.18em` tracking, uppercase, tabular numerals via the `.readout` utility): Nav links, button text, badges, field labels, channel ids (`memory.profile`), and every status chip (`ACTIVE`, `NEVER`, `LOCAL`). This is the control voice of the whole site — buttons and badges are mono-caps, not sentence-case.
 
@@ -138,7 +138,7 @@ Flat by default — panels are one hairline border (`border-border`) on the card
 
 ## Shapes
 
-Machined, not soft. Base radius is `0.5rem` (`--radius`), scaling via `--radius-sm` (0.5×) through `--radius-2xl` (2×) — corners read as cut, not rounded-for-comfort. Status indicators are always small squares (`size-1.5 bg-{color}`), never dots — a deliberate departure from the rounded-dot convention, reinforcing the "machined instrument" character. The signature `SquareDot` (a `0.13em` violet square) closes every major heading. Target/reticle corner brackets (`border-t border-l`, etc., four independent corner spans) mark two signature surfaces: the final-CTA panel and the waitlist-success icon — visually "locking onto" the thing being emphasized.
+Machined, not soft. Base radius is `0.5rem` (`--radius`), scaling via `--radius-sm` (0.5×) through `--radius-2xl` (2×) — corners read as cut, not rounded-for-comfort. Status indicators are always small squares (`size-1.5 bg-{color}`), never dots — a deliberate departure from the rounded-dot convention, reinforcing the "machined instrument" character. Target/reticle corner brackets (`border-t border-l`, etc., four independent corner spans) mark two signature surfaces: the final-CTA panel and the waitlist-success icon — visually "locking onto" the thing being emphasized.
 
 ## Components
 
@@ -191,7 +191,7 @@ framer-motion (`motion/react`) is reserved for specific, authored pieces: the he
 
 - **Do** keep violet/cyan/amber/red meaning fixed everywhere (identity/career/AI-draft/submit-boundary) — introducing a fifth semantic color, or reusing one of these four for something else, breaks the system.
 - **Do** set every data-shaped value (ids, counts, dates, statuses) in Geist Mono with tabular numerals via the `.readout`/`.tnum` utilities.
-- **Do** close major headings with the violet `SquareDot` and keep headings eyebrow-free.
+- **Do** keep headings plain and eyebrow-free — no closing mark after the last word.
 - **Do** use square status indicators (`size-1.5 bg-{color}`), not rounded dots, for anything indicating state.
 - **Do** default new entrance motion to `.enter`/`.scroll-reveal` (CSS) rather than reaching for framer-motion; reserve framer for a genuinely stateful or choreographed interaction.
 - **Do** keep panels flat at rest (hairline border, no shadow) and reserve tinted glow for hover/active states.

@@ -1,5 +1,4 @@
 import { Reveal } from '@/components/motion/reveal'
-import { SquareDot } from '@/components/section-heading'
 import { WaitlistForm } from '@/components/waitlist-form'
 
 export function FinalCta() {
@@ -13,10 +12,7 @@ export function FinalCta() {
                     <span aria-hidden className="absolute bottom-3 left-3 size-4 border-b border-l border-primary/60" />
                     <span aria-hidden className="absolute right-3 bottom-3 size-4 border-r border-b border-primary/60" />
 
-                    <h2 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">
-                        Type it once. Then never again
-                        <SquareDot />
-                    </h2>
+                    <h2 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">Type it once. Then never again</h2>
                     <p className="mt-4 max-w-md text-lg text-muted-foreground text-pretty">
                         Join the waitlist to be the first to try Remem. <br /> No spam — just the launch email.
                     </p>

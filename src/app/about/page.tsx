@@ -4,7 +4,6 @@ import { HardDrive, ShieldCheck, Brain, UserCheck, Repeat, ArrowRight, Code2 } f
 
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
-import { SquareDot } from '@/components/section-heading'
 import { FinalCta } from '@/components/sections/final-cta'
 import { Button } from '@/components/ui/button'
 import { pageMetadata } from '@/lib/metadata'
@@ -69,7 +68,6 @@ export default function AboutPage() {
                         <div className="space-y-4 max-w-3xl">
                             <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">
                                 Every website asks who you are. Again, and again.
-                                <SquareDot />
                             </h2>
                             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                                 Somewhere along the way, we accepted a strange deal: every website gets to ask who you are, and you get to answer — again, and again, and again.
@@ -89,10 +87,7 @@ export default function AboutPage() {
                             <span className="readout text-[10px] tracking-[0.2em] text-muted-foreground">02 // THE WRONG TRADE</span>
                         </div>
                         <div className="rounded-lg border border-border bg-card p-6 sm:p-8 md:p-10 space-y-4 max-w-3xl">
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">
-                                Convenience bought with your privacy
-                                <SquareDot />
-                            </h2>
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">Convenience bought with your privacy</h2>
                             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                                 The tools that promised to fix this made a different trade. They fixed the typing by taking your data — syncing your life to someone else&apos;s servers, selling
                                 convenience back to you, and asking you to trust a privacy policy you&apos;ll never read.
@@ -109,7 +104,6 @@ export default function AboutPage() {
                     </div>
                     <blockquote className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tight uppercase text-foreground leading-[1.12] text-balance max-w-4xl mx-auto">
                         “Memory belongs to the person doing the remembering.”
-                        <SquareDot />
                     </blockquote>
                     <p className="text-base sm:text-lg leading-relaxed text-muted-foreground/80 font-normal max-w-xl mx-auto text-pretty">
                         Not a server. Not a corporate data lake. Remem is a memory layer for your browser that lives with you, on your device.
@@ -124,10 +118,7 @@ export default function AboutPage() {
                                 <span className="size-1.5 bg-primary/80" />
                                 <span className="readout text-[10px] tracking-[0.2em] text-muted-foreground">04 // THE PRINCIPLES</span>
                             </div>
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">
-                                How Remem works
-                                <SquareDot />
-                            </h2>
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">How Remem works</h2>
                         </div>
                         <p className="text-sm text-muted-foreground max-w-md">Five non-negotiable rules guiding how browser memory handles your data.</p>
                     </div>
@@ -162,10 +153,7 @@ export default function AboutPage() {
                             <span className="readout text-[10px] tracking-[0.2em] text-muted-foreground">05 // THE VISION</span>
                         </div>
                         <div className="space-y-4 max-w-3xl">
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">
-                                Building memory for every form on the web
-                                <SquareDot />
-                            </h2>
+                            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight uppercase text-foreground">Building memory for every form on the web</h2>
                             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                                 The vision is bigger than job applications. Every form on the web — visas, admissions, insurance, onboarding — is the same question asked with different labels. A
                                 browser that understands that, privately, saves you hours of your life a year.
