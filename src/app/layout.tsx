@@ -10,6 +10,7 @@ import { ThemeProvider } from '@/components/layout/theme-provider'
 import { JsonLd } from '@/components/json-ld'
 import { siteConfig } from '@/lib/site'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import './globals.css'
 
@@ -128,6 +129,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <BackToTop />
                 </ThemeProvider>
                 <Analytics />
+                <SpeedInsights />
                 <JsonLd data={organizationJsonLd} />
                 <JsonLd data={softwareJsonLd} />
                 <JsonLd data={websiteJsonLd} />
