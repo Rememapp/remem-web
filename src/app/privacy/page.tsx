@@ -72,7 +72,7 @@ const sections = [
     },
     {
         heading: 'Questions',
-        body: ['This policy is meant to be readable. If anything is unclear, email remem@itssvk.dev and a human will answer.'],
+        body: ['This policy is meant to be readable. If anything is unclear, email hello@rememapp.uk and a human will answer.'],
     },
 ]
 

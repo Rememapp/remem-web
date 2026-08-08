@@ -41,7 +41,7 @@ const sections = [
     },
     {
         heading: 'Contact',
-        body: 'Questions? Email us at remem@itssvk.dev — a real person will reply.',
+        body: 'Questions? Email us at hello@rememapp.uk — a real person will reply.',
     },
 ]
 

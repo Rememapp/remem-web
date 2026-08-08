@@ -59,7 +59,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 
 **Open decisions (do not invent):**
 
-- Final domain (temporary: remem.itssvk.dev, a subdomain of the personal site — a proper domain hasn't been bought yet).
+- Domain: rememapp.uk (site at the apex, API at api.rememapp.uk, admin dashboard at admin.rememapp.uk — migrated off the temporary remem.itssvk.dev personal-site subdomain).
 - Social links (X, GitHub) are placeholders.
 - Launch pricing: core local memory + form fill will be free; AI writing paid plan is the direction but TBD — copy should not commit to specific tiers or prices yet.
 
@@ -69,7 +69,7 @@ Remem is not an AI autofill tool. Deterministic fields are filled from determini
 - **Tagline:** "Never repeat yourself."
 - **Voice:** Short, confident sentences; no hedging, no superlatives ("supercharge", "revolutionize", "unlock"). Linear/Arc register — direct and factual.
 - **Visual identity:** Dark mode first, violet/indigo accent, Outfit (display) + Geist (body), no gradients.
-- **Contact:** remem@itssvk.dev
+- **Contact:** hello@rememapp.uk
 - **Open source extension:** a confirmed, verifiable brand commitment — privacy claims are in the code.
 
 ## Evidence on Hand

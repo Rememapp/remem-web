@@ -4,7 +4,7 @@
 // this site's origins in its CORS config (SITE_ORIGINS in its server.ts); if the site ever moves
 // domains, that list has to move with it.
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_REMEM_API_URL ?? 'https://remem-api.itssvk.dev'
+export const API_BASE_URL = process.env.NEXT_PUBLIC_REMEM_API_URL ?? 'https://api.rememapp.uk'
 
 export interface WaitlistResult {
     status: 'success' | 'duplicate' | 'error'

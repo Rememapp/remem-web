@@ -48,8 +48,8 @@ Resend Audiences when `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` are set, else a lo
 Per-page Metadata API with canonical URLs, `sitemap.ts`, `robots.ts`, `manifest.ts`, `rss.xml`
 route, JSON-LD (Organization + SoftwareApplication in layout, FAQPage on `/faq`, BlogPosting on
 posts), dynamic OG images (`src/lib/og.tsx`, root + per-post). Site URL comes from
-`NEXT_PUBLIC_SITE_URL` (defaults to `https://remem.itssvk.dev` for now — update `src/lib/site.ts`
-again once a proper domain is bought; social links there are placeholders too).
+`NEXT_PUBLIC_SITE_URL` (defaults to `https://rememapp.uk` — see `src/lib/site.ts`; social links
+there are still placeholders).
 
 ## Structure
 

@@ -28,7 +28,7 @@ Copy `.env.example` to `.env.local`. Everything is optional in development:
 
 | Variable                                | Purpose                                                                        |
 | --------------------------------------- | ------------------------------------------------------------------------------ |
-| `NEXT_PUBLIC_SITE_URL`                  | Canonical site URL (sitemap, OG, RSS). Defaults to `https://remem.itssvk.dev`. |
+| `NEXT_PUBLIC_SITE_URL`                  | Canonical site URL (sitemap, OG, RSS). Defaults to `https://rememapp.uk`.      |
 | `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` | Waitlist storage via Resend Audiences. Dev fallback: `.data/waitlist.json`.    |
 | `CONTACT_TO_EMAIL`                      | Contact-form delivery via Resend. Unset: logs to the server console.           |
 
