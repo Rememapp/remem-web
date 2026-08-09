@@ -40,6 +40,7 @@ const sections = [
         heading: 'Optional Google Drive backup',
         body: [
             "Backup is off by default. Turn it on, and your data is encrypted on your device before it ever leaves — then uploaded directly to your own Google Drive, not to our servers. The file lives in your Drive, under your account; we never hold a copy, and our server can't read it even in transit. To make this work, we store an encrypted Google authorization token that lets our server act as your Drive client — it can only write to a hidden app folder in your Drive that only Remem can see, never your regular files. Delete the backup there, or turn the setting off, and it is gone.",
+            "Remem's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
         ],
     },
     {

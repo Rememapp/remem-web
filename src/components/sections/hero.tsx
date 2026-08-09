@@ -15,12 +15,12 @@ export function Hero() {
                     <Reveal immediate from="down">
                         <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">
                             <span className="block text-primary">REMEM</span>
-                            Never repeat yourself
                         </h1>
                     </Reveal>
                     <Reveal immediate delay={0.1}>
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">
-                            Remem is a browser extension that remembers your information once, then fills job applications from your memory on your device. You review every field, then press submit yourself.
+                            Remem is a browser extension that remembers your information once, then fills job applications from your memory on your device. You review every field, then press submit
+                            yourself.
                         </p>
                     </Reveal>
                     <Reveal immediate delay={0.2} className="mt-8 flex flex-col gap-4">
