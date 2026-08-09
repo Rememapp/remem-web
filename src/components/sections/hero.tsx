@@ -14,7 +14,7 @@ export function Hero() {
                 <div className="lg:col-span-5">
                     <Reveal immediate from="down">
                         <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">
-                            <span className="block text-primary">REMEM</span>
+                            <span className="block text-primary">Remem</span>
                         </h1>
                     </Reveal>
                     <Reveal immediate delay={0.1}>
