@@ -9,6 +9,11 @@ const columns = [
         links: [
             { href: '/features', label: 'Features' },
             { href: '/how-it-works', label: 'How it works' },
+        ],
+    },
+    {
+        heading: 'Resources',
+        links: [
             { href: '/browser-autofill-alternative', label: 'Vs. browser autofill' },
             { href: '/faq', label: 'FAQ' },
             { href: '/changelog', label: 'Changelog' },

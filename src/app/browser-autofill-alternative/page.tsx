@@ -10,8 +10,7 @@ import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = pageMetadata({
     title: 'Browser Autofill Alternative: What Remem Adds',
-    description:
-        'Chrome and Edge autofill fill a handful of fixed fields. See exactly where that stops and where Remem picks up — cross-site field matching, AI-drafted answers, and a review step before anything submits.',
+    description: 'Browser autofill fills fixed fields. Remem matches equivalent questions across ATS platforms, drafts open-ended answers, and reviews everything before submit.',
     path: '/browser-autofill-alternative',
 })
 
@@ -50,7 +49,7 @@ const comparisonRows: ComparisonRow[] = [
     },
     {
         capability: 'Where your data lives',
-        autofill: 'Can sync to your Google or Microsoft account',
+        autofill: 'Can sync with your Google or Microsoft account',
         remem: 'Stays on your device unless you turn on backup',
         rememWins: true,
     },
@@ -68,8 +67,7 @@ const differentiators: Differentiator[] = [
         icon: Layers,
         tone: 'text-track-career border-track-career/30 bg-track-career/10',
         title: 'Understands equivalent questions',
-        description:
-            'Greenhouse asks for your “given name.” Workday asks for your “legal first name.” Autofill sees two unrelated fields; Remem sees the same question asked twice.',
+        description: 'Greenhouse asks for your “given name.” Workday asks for your “legal first name.” Autofill sees two unrelated fields; Remem sees the same question asked twice.',
     },
     {
         icon: Sparkles,
@@ -82,7 +80,7 @@ const differentiators: Differentiator[] = [
         icon: Eye,
         tone: 'text-primary border-primary/30 bg-primary/10',
         title: 'Shows you before it submits anything',
-        description: 'Autofill drops values straight into the page. Remem fills, then waits — every field stays editable until you decide the application is ready.',
+        description: 'Autofill drops values into the page. Remem fills, then waits — every field stays editable until you decide the application is ready.',
     },
 ]
 
@@ -91,45 +89,46 @@ export default function BrowserAutofillAlternativePage() {
         <>
             <PageHeader
                 title="Remem vs. browser autofill"
-                description="Autofill fills a handful of fields. Job applications ask for a lot more than that — here's exactly where the two differ."
+                description="Browser autofill remembers a small set of fixed fields. Remem is built for forms where the questions, structure, and answers change from site to site."
             />
 
-            <section className="container-page pb-12">
+            <section className="container-page pb-16">
                 <Reveal className="mx-auto max-w-2xl text-center">
-                    <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
-                        Browser autofill is good at what it&apos;s built for: a short list of fixed fields, filled the same way on every site. A forty-field job application is a different problem —
-                        one autofill was never built to solve.
+                    <p className="text-base leading-relaxed text-muted-foreground sm:text-lg text-pretty">
+                        Browser autofill is great at remembering fixed information and filling it the same way across sites. Job applications are different — questions vary, forms change, and many
+                        answers require context.
                     </p>
+                    <p className="mt-4 font-medium text-foreground text-base sm:text-lg text-pretty">Remem is built for that gap.</p>
                 </Reveal>
             </section>
 
             <section className="container-page pb-24">
                 <SectionHeading title="Side by side" description="Same browser, same job application, two different tools." />
                 <Reveal className="mt-10">
-                    <div className="overflow-x-auto rounded-lg border border-border">
-                        <table className="w-full min-w-[640px] border-collapse text-left text-sm">
-                            <caption className="sr-only">Comparison of browser autofill and Remem across common job-application scenarios</caption>
+                    <div className="overflow-x-auto rounded-lg border border-border bg-card shadow-xs">
+                        <table className="w-full min-w-160 border-collapse text-left text-[15px] leading-relaxed">
+                            <caption className="sr-only">Comparison of built-in browser autofill and Remem across job application scenarios</caption>
                             <thead>
                                 <tr className="border-b border-border bg-secondary/40">
-                                    <th scope="col" className="p-4 font-mono text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
+                                    <th scope="col" className="px-6 py-4 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
                                         On a job application
                                     </th>
-                                    <th scope="col" className="p-4 font-mono text-[11px] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
-                                        Browser autofill
+                                    <th scope="col" className="px-6 py-4 font-mono text-[11px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+                                        BROWSER AUTOFILL
                                     </th>
-                                    <th scope="col" className="p-4 font-mono text-[11px] font-semibold tracking-[0.1em] text-primary uppercase">
-                                        Remem
+                                    <th scope="col" className="px-6 py-4 font-mono text-[11px] font-semibold tracking-[0.12em] text-primary uppercase">
+                                        REMEM
                                     </th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-border">
                                 {comparisonRows.map((row) => (
-                                    <tr key={row.capability}>
-                                        <th scope="row" className="p-4 align-top font-medium text-foreground">
+                                    <tr key={row.capability} className="hover:bg-secondary/20 transition-colors">
+                                        <th scope="row" className="px-6 py-4.5 align-top font-medium text-foreground max-w-60">
                                             {row.capability}
                                         </th>
-                                        <td className="p-4 align-top text-muted-foreground">{row.autofill}</td>
-                                        <td className={cn('p-4 align-top', row.rememWins ? 'font-medium text-primary' : 'text-muted-foreground')}>{row.remem}</td>
+                                        <td className="px-6 py-4.5 align-top text-muted-foreground">{row.autofill}</td>
+                                        <td className={cn('px-6 py-4.5 align-top', row.rememWins ? 'font-medium text-primary' : 'text-muted-foreground')}>{row.remem}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -139,16 +138,18 @@ export default function BrowserAutofillAlternativePage() {
             </section>
 
             <section className="container-page pb-24">
-                <SectionHeading title="What autofill can't do" description="Three gaps, and how Remem closes them." />
-                <div className="mt-10 grid gap-4 md:grid-cols-3">
+                <SectionHeading title="What autofill still misses" description="Three gaps, and how Remem closes them." />
+                <div className="mt-10 grid gap-5 md:grid-cols-3">
                     {differentiators.map((item, index) => (
                         <Reveal key={item.title} delay={index * 0.06} className="h-full">
-                            <div className="flex h-full flex-col rounded-lg border border-border bg-card p-6">
-                                <span className={cn('flex size-10 items-center justify-center rounded-md border', item.tone)}>
-                                    <item.icon aria-hidden className="size-5" />
-                                </span>
-                                <h3 className="mt-4 font-display text-lg font-semibold tracking-tight uppercase">{item.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                            <div className="flex h-full flex-col justify-between rounded-lg border border-border bg-card p-6 sm:p-7">
+                                <div>
+                                    <span className={cn('flex size-10 items-center justify-center rounded-md border', item.tone)}>
+                                        <item.icon aria-hidden className="size-5" />
+                                    </span>
+                                    <h3 className="mt-5 font-display text-lg font-semibold tracking-tight uppercase">{item.title}</h3>
+                                    <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                                </div>
                             </div>
                         </Reveal>
                     ))}
@@ -157,10 +158,10 @@ export default function BrowserAutofillAlternativePage() {
 
             <section className="container-page pb-24">
                 <Reveal className="mx-auto max-w-2xl rounded-lg border border-border bg-secondary/30 p-6 sm:p-8">
-                    <p className="readout text-muted-foreground">Where autofill is still the better tool</p>
+                    <p className="readout text-muted-foreground">USE THE RIGHT TOOL</p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        Remem is built for job applications today — Greenhouse, Lever, Workday, Ashby, and similar ATS platforms. For a checkout form or a government portal, plain browser autofill
-                        is still the right tool. We&apos;d rather say that here than let the comparison overreach.
+                        Remem is built for job applications today — Greenhouse, Lever, Workday, Ashby, and similar ATS platforms. For a checkout form or a government portal, plain browser autofill is
+                        still the right tool. We&apos;d rather say that than let the comparison overreach.
                     </p>
                 </Reveal>
             </section>

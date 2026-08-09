@@ -13,13 +13,13 @@
  * Colors ride the theme tokens, so light mode renders the printed-plot version.
  */
 
-const SECTION_CLASS = 'absolute top-1/2 -right-[28rem] size-[75rem] max-w-none -translate-y-1/2 md:-right-[30rem]'
+const SECTION_CLASS = 'absolute top-1/2 -right-[32rem] size-[75rem] max-w-none -translate-y-1/2 md:-right-[36rem] lg:-right-[40rem] opacity-70'
 
 export function BackgroundFx() {
     return (
         <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
             {/* Dot-grid lattice over the whole ground */}
-            <svg className="absolute inset-0 size-full opacity-[0.35] dark:opacity-25" role="presentation">
+            <svg className="absolute inset-0 size-full opacity-[0.25] dark:opacity-20" role="presentation">
                 <defs>
                     <pattern id="bg-dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
                         <circle cx="1" cy="1" r="1" fill="var(--steel)" opacity="0.35" />
@@ -59,7 +59,7 @@ export function BackgroundFx() {
             </div>
 
             {/* Small survey reticle, upper left — asymmetry against the big section */}
-            <svg viewBox="0 0 120 120" className="absolute top-24 left-[6%] size-28 opacity-20 md:top-32" role="presentation" fill="none" stroke="var(--steel)">
+            <svg viewBox="0 0 120 120" className="absolute top-24 left-[6%] size-28 opacity-12 md:top-32" role="presentation" fill="none" stroke="var(--steel)">
                 <circle cx="60" cy="60" r="44" strokeWidth="1" strokeDasharray="10 8" />
                 <circle cx="60" cy="60" r="20" strokeWidth="1" opacity="0.7" />
                 <line x1="60" y1="4" x2="60" y2="28" strokeWidth="1" />
