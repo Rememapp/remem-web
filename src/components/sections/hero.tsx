@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { EventBloom } from '@/components/event-bloom'
 import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { WaitlistForm } from '@/components/waitlist-form'
 
@@ -13,6 +14,15 @@ export function Hero() {
             <div className="grid items-center gap-12 lg:grid-cols-12">
                 <div className="lg:col-span-5">
                     <Reveal immediate from="down">
+                        <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                            <Badge variant="accent" className="gap-1.5">
+                                <span aria-hidden className="size-1.5 bg-primary" />
+                                REMEM
+                            </Badge>
+                            <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                                Privacy-first browser memory
+                            </span>
+                        </div>
                         <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">Never repeat yourself</h1>
                     </Reveal>
                     <Reveal immediate delay={0.1}>
