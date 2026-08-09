@@ -7,7 +7,7 @@ import { pageMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Contact',
+    title: 'Contact: Questions, Feedback & Press',
     description: 'Questions, feedback, or press — get in touch with the Remem team. We read every message.',
     path: '/contact',
 })

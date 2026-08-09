@@ -5,7 +5,7 @@ import { Reveal } from '@/components/motion/reveal'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Privacy policy',
+    title: 'Privacy Policy: Local-First Data, Explained Simply',
     description: 'The Remem privacy policy in plain language: your data lives on your device, backup goes encrypted to your own Google Drive, and we have nothing to sell.',
     path: '/privacy',
 })

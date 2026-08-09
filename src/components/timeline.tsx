@@ -98,43 +98,40 @@ export function Timeline() {
                     const isActive = index === active
                     return (
                         <li key={step.title} className="relative">
-                            <button
-                                type="button"
-                                onClick={() => select(index)}
-                                aria-current={isActive ? 'step' : undefined}
-                                className={cn(
-                                    'group flex w-full items-start gap-4 rounded-lg p-4 text-left transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                                    isActive ? 'bg-card border border-border shadow-[0_8px_30px_rgba(0,0,0,0.06)]' : 'border border-transparent hover:bg-secondary/50',
-                                )}
-                            >
-                                <span
+                            <h3 className="contents" aria-label={step.title}>
+                                <button
+                                    type="button"
+                                    onClick={() => select(index)}
+                                    aria-current={isActive ? 'step' : undefined}
                                     className={cn(
-                                        'mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md transition-colors',
-                                        isActive ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground group-hover:text-foreground',
+                                        'group flex w-full items-start gap-4 rounded-lg p-4 text-left transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                                        isActive ? 'bg-card border border-border shadow-[0_8px_30px_rgba(0,0,0,0.06)]' : 'border border-transparent hover:bg-secondary/50',
                                     )}
                                 >
-                                    <step.icon aria-hidden className="size-4.5" />
-                                </span>
-                                <span className="min-w-0">
-                                    <span className={cn('block font-medium transition-colors', isActive ? 'text-foreground' : 'text-muted-foreground')}>
-                                        <span className="mr-2 font-mono text-xs tnum opacity-60">{String(index + 1).padStart(2, '0')}</span>
-                                        {step.title}
+                                    <span
+                                        className={cn(
+                                            'mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md transition-colors',
+                                            isActive ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground group-hover:text-foreground',
+                                        )}
+                                    >
+                                        <step.icon aria-hidden className="size-4.5" />
                                     </span>
-                                    <AnimatePresence initial={false}>
-                                        {isActive ? (
-                                            <motion.span
-                                                initial={reducedMotion ? false : { height: 0, opacity: 0 }}
-                                                animate={{ height: 'auto', opacity: 1 }}
-                                                exit={reducedMotion ? undefined : { height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                                                className="block overflow-hidden"
-                                            >
-                                                <span className="mt-1.5 block text-sm leading-relaxed text-muted-foreground">{step.description}</span>
-                                            </motion.span>
-                                        ) : null}
-                                    </AnimatePresence>
-                                </span>
-                            </button>
+                                    <span className="min-w-0">
+                                        <span className={cn('block font-medium transition-colors', isActive ? 'text-foreground' : 'text-muted-foreground')}>
+                                            <span className="mr-2 font-mono text-xs tnum opacity-60">{String(index + 1).padStart(2, '0')}</span>
+                                            {step.title}
+                                        </span>
+                                        <motion.span
+                                            initial={false}
+                                            animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
+                                            transition={{ duration: reducedMotion ? 0 : 0.35, ease: [0.16, 1, 0.3, 1] }}
+                                            className="block overflow-hidden"
+                                        >
+                                            <span className="mt-1.5 block text-sm leading-relaxed text-muted-foreground">{step.description}</span>
+                                        </motion.span>
+                                    </span>
+                                </button>
+                            </h3>
                         </li>
                     )
                 })}

@@ -9,7 +9,7 @@ import { pageMetadata } from '@/lib/metadata'
 import { formatDate } from '@/lib/utils'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Changelog',
+    title: 'Changelog: Progress Notes on the Road to Launch',
     description: 'What we are building and shipping on the way to the Remem launch.',
     path: '/changelog',
 })

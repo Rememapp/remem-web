@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'About',
+    title: 'About: Building a Privacy-First Browser Memory',
     description: 'Why we are building Remem: a browser memory that remembers for you, without your data ever leaving your hands.',
     path: '/about',
 })

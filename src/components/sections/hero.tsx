@@ -6,6 +6,7 @@ import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
 import { Button } from '@/components/ui/button'
 import { WaitlistForm } from '@/components/waitlist-form'
+import { Badge } from '../ui/badge'
 
 export function Hero() {
     return (
@@ -13,9 +14,14 @@ export function Hero() {
             <div className="grid items-center gap-12 lg:grid-cols-12">
                 <div className="lg:col-span-5">
                     <Reveal immediate from="down">
-                        <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">
-                            <span className="block text-primary">Remem</span>
-                        </h1>
+                        <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                            <Badge variant="accent" className="gap-1.5">
+                                <span aria-hidden className="size-1.5 bg-primary" />
+                                REMEM
+                            </Badge>
+                            <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Privacy-first browser memory</span>
+                        </div>
+                        <h1 className="font-display text-5xl font-bold tracking-tight text-balance uppercase md:text-6xl xl:text-7xl">Never repeat yourself</h1>
                     </Reveal>
                     <Reveal immediate delay={0.1}>
                         <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground text-pretty">

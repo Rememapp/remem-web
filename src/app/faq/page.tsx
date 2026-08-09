@@ -10,7 +10,7 @@ import { faqs } from '@/lib/faqs'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'FAQ',
+    title: 'FAQ: Browser Autofill Comparison & Data Privacy',
     description: 'How Remem differs from browser autofill, where your data is stored, what the AI does and does not do, and every other question we get asked.',
     path: '/faq',
 })

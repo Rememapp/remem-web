@@ -5,7 +5,7 @@ import { Reveal } from '@/components/motion/reveal'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Terms of service',
+    title: 'Terms of Service, in Plain Language',
     description: 'The Remem terms of service, in language you can actually read.',
     path: '/terms',
 })

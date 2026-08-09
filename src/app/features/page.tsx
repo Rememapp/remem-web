@@ -7,7 +7,7 @@ import { FinalCta } from '@/components/sections/final-cta'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Features',
+    title: 'Features: Browser Memory, AI Drafting & Auto-Fill',
     description: 'Smart form detection, profile memory, AI writing for open-ended questions, local-first storage, and one-click fill — every Remem feature, explained.',
     path: '/features',
 })

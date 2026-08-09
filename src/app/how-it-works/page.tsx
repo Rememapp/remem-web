@@ -7,7 +7,7 @@ import { Timeline } from '@/components/timeline'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata: Metadata = pageMetadata({
-    title: 'How it works',
+    title: 'How It Works: Fill Job Applications in One Click',
     description: 'From creating your local profile to submitting a form yourself — the six-step loop behind Remem, and why it never auto-submits anything.',
     path: '/how-it-works',
 })
