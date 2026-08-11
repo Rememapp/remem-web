@@ -7,6 +7,12 @@
       "skillPath": ".agents/skills/impeccable/SKILL.md",
       "computedHash": "619dd9b5f8bc190636350dba5170b6d4272bd4c5e71ae0fa634893ee807d4ee1"
     },
+    "indexion-readme": {
+      "source": "trkbt10/indexion-skills",
+      "sourceType": "github",
+      "skillPath": "skills/indexion-readme/SKILL.md",
+      "computedHash": "a45ec68296705a05d11b55485a1bfef0d1b768222cd677660e18d9e5fd7e56c0"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",

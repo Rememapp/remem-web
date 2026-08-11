@@ -6,7 +6,7 @@ export const siteConfig = {
     email: 'hello@rememapp.uk',
     links: {
         twitter: 'https://x.com/ShouvikMohanta',
-        github: 'https://github.com/ItsSVK/remem-web',
+        github: 'https://github.com/Rememapp',
         roadmap: '/changelog',
     },
     keywords: [
