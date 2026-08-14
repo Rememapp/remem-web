@@ -15,7 +15,7 @@ const sections = [
         heading: 'The short version',
         lead: "We can't read or sell data we don't have.",
         body: [
-            "Your memory data — profiles, answers, documents — is stored on your device, not ours. Creating an account shares your email, name, and profile photo from Google sign-in, which we store to know who you are across sessions. Using an AI feature sends the specific information that feature needs to our AI provider. Joining the waitlist stores your email. That's the complete list — we don't collect anything else.",
+            "Your memory data — profiles, answers, documents — is stored on your device, not ours. Creating an account shares your email, name, and profile photo from Google sign-in, which we store to know who you are across sessions. Using an AI feature sends the specific information that feature needs to our AI provider. That's the complete list — we don't collect anything else.",
         ],
     },
     {
@@ -50,15 +50,9 @@ const sections = [
         ],
     },
     {
-        heading: 'The waitlist',
-        body: [
-            "If you join the waitlist, we store your email address and use it for one thing: telling you about Remem's launch and early access. No sharing, no selling, and every email includes an unsubscribe link that actually works.",
-        ],
-    },
-    {
         heading: 'Analytics',
         body: [
-            'This website may use privacy-respecting, cookie-free analytics (page views and anonymous events like "joined waitlist"). No cross-site tracking, no advertising identifiers, no fingerprinting.',
+            'This website may use privacy-respecting, cookie-free analytics (page views and anonymous events like "clicked install"). No cross-site tracking, no advertising identifiers, no fingerprinting.',
         ],
     },
     {
@@ -68,7 +62,7 @@ const sections = [
     {
         heading: 'Your rights',
         body: [
-            'Delete your local memory in one action, anytime. Restore an encrypted backup from your own Google Drive whenever you want it back. Email us to delete your account. Unsubscribe from waitlist emails with one click, or just write to us.',
+            'Delete your local memory in one action, anytime. Restore an encrypted backup from your own Google Drive whenever you want it back. Email us to delete your account.',
         ],
     },
     {

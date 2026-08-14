@@ -8,6 +8,7 @@ export const siteConfig = {
         twitter: 'https://x.com/ShouvikMohanta',
         github: 'https://github.com/Rememapp',
         roadmap: '/changelog',
+        chromeWebStore: 'https://chromewebstore.google.com/detail/remem-remember-once-apply/fmnfladpephfcghlemkccemhdbgoeonp',
     },
     keywords: [
         'browser autofill alternative',

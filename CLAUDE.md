@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Full project context lives in [AGENTS.md](AGENTS.md) — currently just a placeholder, since this site hasn't been planned yet. Read it anyway in case it's since been filled in.
+Full project context lives in [AGENTS.md](AGENTS.md) — it's filled in; read it for stack, conversion goal, design decisions, and structure.
 
 ## Sibling Repos
 

@@ -9,6 +9,10 @@ export const faqs: Faq[] = [
         answer: "Remem is a local-first browser memory that remembers information you've already shared, so you never have to repeat yourself. Fill your profile once, review suggestions, and reuse your information across forms, applications, and websites. Your data stays on your device.",
     },
     {
+        question: 'How do I get Remem?',
+        answer: "Install it from the Chrome Web Store — it's free and takes under a minute. It also works in other Chromium browsers like Edge, Brave, and Arc.",
+    },
+    {
         question: 'How is this different from browser autofill?',
         answer: 'Browser autofill only fills fixed fields like your name, email, or address. Remem understands entire forms, matches equivalent questions across different websites, remembers long-form answers, and helps complete complex applications—not just simple inputs.',
     },

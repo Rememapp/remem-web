@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import { InstallButton } from '@/components/install-button'
 import { Logo } from '@/components/layout/logo'
 import { ThemeToggle } from '@/components/layout/theme-toggle'
 import { Button } from '@/components/ui/button'
@@ -64,9 +65,7 @@ export function Navbar() {
 
                 <div className="flex items-center gap-2">
                     <ThemeToggle />
-                    <Button asChild className="hidden md:inline-flex">
-                        <Link href="/#waitlist">Join waitlist</Link>
-                    </Button>
+                    <InstallButton source="navbar" size="compact" className="hidden md:inline-flex" />
                     <Button
                         variant="ghost"
                         size="icon"
@@ -93,9 +92,7 @@ export function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-                        <Button asChild className="mt-2">
-                            <Link href="/#waitlist">Join waitlist</Link>
-                        </Button>
+                        <InstallButton source="navbar-mobile" size="compact" className="mt-2" />
                     </div>
                 </div>
             ) : null}

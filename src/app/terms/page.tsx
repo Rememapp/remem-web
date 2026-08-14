@@ -37,7 +37,7 @@ const sections = [
     },
     {
         heading: 'Changes',
-        body: 'If these terms change materially, we will say so clearly — on this page and, if you are on the waitlist or a paying user, by email. Continued use after a change means you accept it.',
+        body: 'If these terms change materially, we will say so clearly — on this page and, if you are a registered or paying user, by email. Continued use after a change means you accept it.',
     },
     {
         heading: 'Contact',

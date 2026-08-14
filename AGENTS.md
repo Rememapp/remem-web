@@ -16,11 +16,11 @@ which this site draws tokens from but does not copy wholesale).
 
 ## Conversion goal
 
-One primary goal: **waitlist email capture** (`src/actions/waitlist.ts`). Every page funnels to
-`WaitlistForm` (hero + `#waitlist` final CTA). The action validates with Zod, has a honeypot
-(`company` field), naive per-email rate limiting, and duplicate handling. Storage backend:
-Resend Audiences when `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` are set, else a local
-`.data/waitlist.json` fallback for dev. Success redirects to `/waitlist/success`.
+One primary goal: **Chrome Web Store installs**. Every page funnels to `InstallButton`
+(hero + final CTA + navbar), which links straight to the CWS listing (`siteConfig.links.chromeWebStore`)
+— no local form, no backend involved. The only remaining form is `ContactForm` (`/contact`), which
+posts to the sibling `remem-api` worker (`src/lib/remem-api.ts`) with Zod validation, a honeypot
+(`company` field), and Cloudflare Turnstile.
 
 ## Design decisions
 
@@ -54,9 +54,9 @@ there are still placeholders).
 ## Structure
 
 - `src/app/` — routes: `/`, `/features`, `/how-it-works`, `/faq`, `/about`, `/contact`,
-  `/changelog`, `/privacy`, `/terms`, `/waitlist/success`
+  `/changelog`, `/privacy`, `/terms`
 - `src/components/sections/` — homepage sections; `src/components/` — shared (InteractiveDemo,
-  Timeline, WaitlistForm, FaqList, FeatureCard, PageHeader, SectionHeading)
+  Timeline, InstallButton, ContactForm, FaqList, FeatureCard, PageHeader, SectionHeading)
 - `src/lib/` — site config, feature/FAQ data, blog/changelog loaders, analytics stub (Plausible/Umami-agnostic)
 
 Future-ready: pricing, docs, dashboard, roadmap/feature voting can be added as new routes without

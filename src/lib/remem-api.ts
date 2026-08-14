@@ -6,11 +6,6 @@
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_REMEM_API_URL ?? 'https://api.rememapp.uk'
 
-export interface WaitlistResult {
-    status: 'success' | 'duplicate' | 'error'
-    message: string
-}
-
 export interface ContactResult {
     status: 'success' | 'error'
     message: string
@@ -42,13 +37,6 @@ async function postSubmission(path: string, payload: object): Promise<{ data: { 
     } catch {
         return { data: null, refusal: 'Could not reach the server. Check your connection and try again.' }
     }
-}
-
-export async function joinWaitlist(input: { email: string; source: string } & SubmissionFields): Promise<WaitlistResult> {
-    const { data, refusal } = await postSubmission('/api/site/waitlist', input)
-    if (refusal) return { status: 'error', message: refusal }
-    if (data?.status === 'duplicate') return { status: 'duplicate', message: 'You are already on the list — we will be in touch.' }
-    return { status: 'success', message: 'You are on the list.' }
 }
 
 export async function sendContactMessage(input: { name: string; email: string; message: string } & SubmissionFields): Promise<ContactResult> {

@@ -2,10 +2,10 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { EventBloom } from '@/components/event-bloom'
+import { InstallButton } from '@/components/install-button'
 import { InteractiveDemo } from '@/components/interactive-demo'
 import { Reveal } from '@/components/motion/reveal'
 import { Button } from '@/components/ui/button'
-import { WaitlistForm } from '@/components/waitlist-form'
 import { Badge } from '../ui/badge'
 
 export function Hero() {
@@ -30,7 +30,7 @@ export function Hero() {
                         </p>
                     </Reveal>
                     <Reveal immediate delay={0.2} className="mt-8 flex flex-col gap-4">
-                        <WaitlistForm source="hero" />
+                        <InstallButton source="hero" className="w-fit" />
                         <Button asChild variant="ghost" className="w-fit -translate-x-3 text-muted-foreground">
                             <Link href="/how-it-works">
                                 See how it works

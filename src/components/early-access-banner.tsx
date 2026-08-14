@@ -18,7 +18,8 @@ export function EarlyAccessBanner() {
                         <span className="font-mono text-xs text-muted-foreground tnum">Active Beta</span>
                     </div>
                     <p className="text-sm leading-relaxed text-muted-foreground">
-                        Remem is in active beta and evolving quickly. You may occasionally encounter bugs as we continue refining the experience. Thanks for helping shape the future of Remem.
+                        Remem is live on the Chrome Web Store and still in active beta, focused on job applications — Greenhouse, Lever, Workday, and Ashby. You may occasionally hit rough edges as
+                        we keep refining it.
                     </p>
                 </div>
             </div>

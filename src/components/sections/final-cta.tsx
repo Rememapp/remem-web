@@ -1,9 +1,9 @@
+import { InstallButton } from '@/components/install-button'
 import { Reveal } from '@/components/motion/reveal'
-import { WaitlistForm } from '@/components/waitlist-form'
 
 export function FinalCta() {
     return (
-        <section id="waitlist" className="container-page scroll-mt-24 py-24 md:py-36">
+        <section className="container-page py-24 md:py-36">
             <Reveal>
                 <div className="relative flex flex-col items-center rounded-lg border border-border bg-card px-6 py-16 text-center md:py-20">
                     {/* Reticle corners — the target, locked */}
@@ -14,10 +14,10 @@ export function FinalCta() {
 
                     <h2 className="max-w-2xl font-display text-4xl font-bold tracking-tight text-balance uppercase md:text-5xl">Type it once. Then never again</h2>
                     <p className="mt-4 max-w-md text-lg text-muted-foreground text-pretty">
-                        Join the waitlist to be the first to try Remem. <br /> No spam — just the launch email.
+                        Free, and ready in under a minute. <br /> Available now on the Chrome Web Store.
                     </p>
                     <div className="mt-8 flex w-full justify-center">
-                        <WaitlistForm source="final-cta" />
+                        <InstallButton source="final-cta" />
                     </div>
                     <p className="mt-6 flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
                         <span aria-hidden className="size-1.5 bg-boundary" />

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { HardDrive, ShieldCheck, Brain, UserCheck, Repeat, ArrowRight, Code2 } from 'lucide-react'
+import { HardDrive, ShieldCheck, Brain, UserCheck, Repeat, Code2 } from 'lucide-react'
 
+import { InstallButton } from '@/components/install-button'
 import { PageHeader } from '@/components/page-header'
 import { Reveal } from '@/components/motion/reveal'
 import { FinalCta } from '@/components/sections/final-cta'
@@ -159,8 +159,7 @@ export default function AboutPage() {
                                 browser that understands that, privately, saves you hours of your life a year.
                             </p>
                             <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
-                                {/* The extension is open source, because claims about privacy should be checkable. If that resonates, join the waitlist — or inspect the code. */}
-                                The extension will be open sourced soon, because claims about privacy should be checkable. If that resonates, join the waitlist.
+                                The extension will be open sourced soon, because claims about privacy should be checkable. If that resonates, add it to Chrome.
                             </p>
                         </div>
                     </div>
@@ -174,12 +173,7 @@ export default function AboutPage() {
                         </blockquote>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-                            <Button asChild variant="default">
-                                <Link href="#waitlist">
-                                    Join the Waitlist
-                                    <ArrowRight className="ml-2 size-4" />
-                                </Link>
-                            </Button>
+                            <InstallButton source="about" size="compact" />
                             <div className="relative group/tooltip inline-flex items-center">
                                 <Button variant="outline" disabled className="cursor-not-allowed opacity-60">
                                     <Code2 className="mr-2 size-4" />

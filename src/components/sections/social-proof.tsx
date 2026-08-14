@@ -8,7 +8,7 @@ const readouts = [
     { key: 'source', value: 'Open', detail: 'Extension code is public', tone: 'bg-primary' },
     { key: 'storage', value: 'Local', detail: 'No server copy of your data', tone: 'bg-track-career' },
     { key: 'auto-submit', value: 'Never', detail: 'Hard-coded, not a setting', tone: 'bg-boundary' },
-    { key: 'status', value: 'Waitlist', detail: 'Launching on Chromium first', tone: 'bg-track-answer' },
+    { key: 'status', value: 'Live', detail: 'Available now on Chrome', tone: 'bg-track-answer' },
 ] as const
 
 export function SocialProof() {
